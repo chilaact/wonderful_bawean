@@ -22,15 +22,15 @@
 		    </div>
 
 		    <!-- Login Form -->
-		    <form>
-		      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-		      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+		    <form action="<?php echo base_url('aksi_login'); ?>" method="post">
+		      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
+		      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
 		      <input type="submit" class="fadeIn fourth" value="Log In">
 		    </form>
 
 		    <!-- Remind Passowrd -->
 		    <div id="formFooter">
-		      <a class="underlineHover" href="#">Create New Account</a>
+		      <a class="underlineHover" href="<?= site_url('C_login/registration'); ?>">Create New Account</a><br><br>
 		      <a class="underlineHover" href="#">Forgot Password?</a>
 		    </div>
 
