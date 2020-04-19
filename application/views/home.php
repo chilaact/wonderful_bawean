@@ -103,7 +103,7 @@
     <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
-              <p><a href="#" class="btn btn-primary px-5 py-3">See More ---> </a></p>              
+              <p><a href="<?= base_url('C_login/index'); ?>" class="btn btn-primary px-5 py-3">See More ---> </a></p>              
             </div>
           </div>
     </div>
