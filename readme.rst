@@ -15,7 +15,7 @@ How to Use
 2. Clone or download this repo
 3. Extract file to C:\xampp\htdocs
 4. Import the database boyan.sql to http://localhost/phpmyadmin
-5. Open browser and run this app by typing localhost/..........
+5. Open browser and run this app by typing localhost/sektala
 
 ***************
 Collaborators
