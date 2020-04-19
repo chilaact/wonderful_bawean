@@ -22,6 +22,6 @@ Collaborators
 3. 17081010058 Rahayu Prabawati A.  - https://github.com/rahayuamelia
 4. 17081010065 Sandy Rizkyando      - https://github.com/SandyRizkyando
 
-All of us are student from Framework Programming Class Paralel-B
-with the Lecturer is Mr. Fawwaz Ali Akbar (https://github.com/fwwzali)
-Informatics, UPN "Veteran" East Java
+All of us are students of the Parallel-B Programming Framework
+With the Lecturer is Mr. Fawwaz Ali Akbar (https://github.com/fwwzali)
+From the Department of Informatics, UPN "veteran" East Java
