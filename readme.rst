@@ -1,7 +1,7 @@
 ########################
 What is Wonderful Bawean
 ########################
-
+Wonderful Bawean is an information system that is able to display tourism objects and provide information if the tourism object is selected, users can see more details of the tourism object to be searched, and can find out the admission tickets on the island of Bawean.
 
 *********
 Features
@@ -23,5 +23,5 @@ Collaborators
 4. 17081010065 Sandy Rizkyando      - https://github.com/SandyRizkyando
 
 All of us are students of the Parallel-B Programming Framework
-With the Lecturer is Mr. Fawwaz Ali Akbar (https://github.com/fwwzali)
-From the Department of Informatics, UPN "veteran" East Java
+with the Lecturer is Mr. Fawwaz Ali Akbar (https://github.com/fwwzali)
+From the Department of Informatics, UPN "Veteran" East Java
