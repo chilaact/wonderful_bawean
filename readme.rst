@@ -11,7 +11,11 @@ Features
 ***********
 How to Use
 ***********
-
+1. Run your XAMPP, because this information system will be run at your localhost
+2. Clone or download this repo
+3. Extract file to C:\xampp\htdocs
+4. Import the database boyan.sql to http://localhost/phpmyadmin
+5. Open browser and run this app by typing localhost/..........
 
 ***************
 Collaborators
