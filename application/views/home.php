@@ -1,3 +1,45 @@
+ <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+  </div>
+    
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo m-0 p-0"><a href="#" class="mb-0">wonderful <br>&nbsp;&nbsp;&nbsp;bawean</a></h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#daftar-wisata-section" class="nav-link">Daftar Wisata</a></li>
+                <li><a href="#daftar-hotel-section" class="nav-link">Hotel & Penginapan</a></li>
+                <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                <li><a href="<?= base_url('C_login/index'); ?>" class="nav-link">Sign In</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
 
   <div class="site-block-wrap">
     <div class="owl-carousel with-dots">
@@ -13,13 +55,13 @@
   </div>      
 
 
-  <div class="site-section" id="properties-section">
+  <div class="site-section" id="daftar-wisata-section">
       <div class="container">
         <div class="row large-gutters">
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
             <div class="ftco-media-1">
               <div class="ftco-media-1-inner">
-                <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/kastoba.jpg" alt="FImageo" class="img-fluid"></a>
+                <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/kastoba.jpg" alt="FImageo" class="img-fluid"></a>
                 <div class="ftco-media-details">
                   <h3>Danau Kastoba</h3>
                   <p>Dsn. Candi - BAWEAN</p>
@@ -32,7 +74,7 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
               <div class="ftco-media-1">
                   <div class="ftco-media-1-inner">
-                    <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/noko.jpg" alt="Image" class="img-fluid"></a>
+                    <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/noko.jpg" alt="Image" class="img-fluid"></a>
                     <div class="ftco-media-details">
                       <h3>Pulau Noko</h3>
                       <p>Ds. Sidogedungbatu - BAWEAN</p>
@@ -45,7 +87,7 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
               <div class="ftco-media-1">
                   <div class="ftco-media-1-inner">
-                    <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/mangrove3.jpg" alt="Image" class="img-fluid"></a>
+                    <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/mangrove3.jpg" alt="Image" class="img-fluid"></a>
                     <div class="ftco-media-details">
                       <h3>Hutan Mangrove</h3>
                       <p>Ds. Daun - BAWEAN</p>
@@ -59,7 +101,7 @@
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
               <div class="ftco-media-1">
                 <div class="ftco-media-1-inner">
-                  <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/mombhul4.jpg" alt="Image" class="img-fluid"></a>
+                  <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/mombhul4.jpg" alt="Image" class="img-fluid"></a>
                   <div class="ftco-media-details">
                     <h3>Mombhul Beach</h3>
                     <p>Ds. Sidogedungbatu - BAWEAN</p>
@@ -72,7 +114,7 @@
             <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                 <div class="ftco-media-1">
                     <div class="ftco-media-1-inner">
-                      <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/airterjun.jpg" alt="Image" class="img-fluid"></a>
+                      <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/airterjun.jpg" alt="Image" class="img-fluid"></a>
                       <div class="ftco-media-details">
                         <h3>Laccar Waterfall</h3>
                         <p>Dsn. Laccar - BAWEAN</p>
@@ -85,7 +127,7 @@
             <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
                 <div class="ftco-media-1">
                     <div class="ftco-media-1-inner">
-                      <a href="property-single.html" class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/tanjungan.jpg" alt="Image" class="img-fluid"></a>
+                      <a class="d-inline-block mb-4"><img src="<?php echo base_url() ?>assets/image/tanjungan.jpg" alt="Image" class="img-fluid"></a>
                       <div class="ftco-media-details">
                         <h3>Tanjung Ghe'en</h3>
                         <p>Ds. Komalasa - BAWEAN</p>
@@ -110,7 +152,7 @@
     
     
     
-    <section class="site-section" id="agents-section">
+    <section class="site-section" id="daftar-hotel-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-7 text-left">

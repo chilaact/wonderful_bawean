@@ -24,11 +24,11 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#properties-section" class="nav-link">Daftar Wisata</a></li>
-                <li><a href="#agents-section" class="nav-link">Hotel & Penginapan</a></li>
-                <li><a href="#about-section" class="nav-link">About</a></li>
-                <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                <li><a href="<?= base_url('C_login/index'); ?>" class="nav-link">Sign In</a></li>
+                <li><a href="#daftar-wisata-section" class="nav-link">Daftar Wisata</a></li>
+                <li><a href="#" class="nav-link">Hotel & Penginapan</a></li>
+                <li><a href="#" class="nav-link">Pesanan</a></li>
+                <li><a href="#" class="nav-link">Profile</a></li>
+                <li><a href="<?= base_url('C_login/logout'); ?>" class="nav-link">Logout</a></li>
               </ul>
             </nav>
           </div>
