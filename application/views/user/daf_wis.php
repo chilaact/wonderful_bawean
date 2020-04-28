@@ -29,9 +29,9 @@
                 <div class="ftco-media-details">
                   <h3><?php echo $wis->wis_nama ?></h3>
                   <p><?php echo $wis->wis_desc_short ?></p>
-                  Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong class="badge badge-bg badge-success"> Rp. <?php echo $wis->wis_hrg_weekday ?> ,-</strong><br>
-                  <a href="#" class="btn btn-sm btn-primary">Pesan</a>
-                  <a href="#" class="btn btn-sm btn-danger">Detail</a>
+                  Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="badge badge-bg badge-success"> Rp. <?php echo $wis->wis_hrg_weekday ?> ,-</span><br>
+                  <a href="#" class="btn btn-sm btn-danger">Pesan</a>
+                  <?php echo anchor('C_wisata/detail_wis/'.$wis->wis_id, '<div class="btn btn-sm btn-primary">Detail</div>') ?> <!-- <a href="#" class="btn btn-sm btn-danger">Detail</a> -->
                 </div>
   
               </div> 

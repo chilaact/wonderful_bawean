@@ -15,4 +15,11 @@ class C_wisata extends CI_Controller {
 		$this->load->view('user/daf_wis', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function detail_wis($wis_id){
+		$data['detail'] = $this->M_wisata->getDetById($wis_id);
+		$this->load->view('templates/header');
+		$this->load->view('user/det_wis', $data);
+		$this->load->view('templates/footer');
+	}
 }
