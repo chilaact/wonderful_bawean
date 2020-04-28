@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2020 at 03:33 PM
+-- Generation Time: Apr 28, 2020 at 03:11 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `fasilitas` (
   `fas_id` int(11) NOT NULL,
+  `wis_id` int(11) NOT NULL,
   `fas_nama` varchar(200) NOT NULL,
   `fas_icon` text NOT NULL,
   `fas_date_created` date NOT NULL,
@@ -113,6 +114,13 @@ CREATE TABLE `wisata` (
   `wis_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `wisata`
+--
+
+INSERT INTO `wisata` (`wis_id`, `wis_nama`, `wis_img`, `wis_desc_short`, `wis_desc_long`, `wis_hrg_weekday`, `wis_hrg_weekend`, `wis_kuota_weekday`, `wis_kuota_weekend`, `wis_date_created`, `wis_date_update`, `wis_status`) VALUES
+(1, 'danau kastoba', 'kastoba.jpg', 'Dsn. Candi-Bawean', 'Danau di atas gunung', '3000', '5000', 50, 100, '2020-02-02', '2020-04-01', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -132,7 +140,8 @@ CREATE TABLE `wis_fasilitas` (
 -- Indexes for table `fasilitas`
 --
 ALTER TABLE `fasilitas`
-  ADD PRIMARY KEY (`fas_id`);
+  ADD PRIMARY KEY (`fas_id`),
+  ADD KEY `wis_id` (`wis_id`);
 
 --
 -- Indexes for table `pesan`
@@ -187,11 +196,17 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `wis_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `wis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `fasilitas`
+--
+ALTER TABLE `fasilitas`
+  ADD CONSTRAINT `fasilitas_ibfk_1` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pesan`
@@ -199,13 +214,6 @@ ALTER TABLE `wisata`
 ALTER TABLE `pesan`
   ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`us_id`) REFERENCES `user` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `pesan_ibfk_2` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `wis_fasilitas`
---
-ALTER TABLE `wis_fasilitas`
-  ADD CONSTRAINT `wis_fasilitas_ibfk_1` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `wis_fasilitas_ibfk_2` FOREIGN KEY (`fas_id`) REFERENCES `fasilitas` (`fas_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
