@@ -23,8 +23,8 @@
 
 		    <!-- Login Form -->
 		    <form action="<?php echo base_url('C_login/aksi_login'); ?>" method="post">
-		      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
-		      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+		      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" required>
+		      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
 		      <input type="submit" class="fadeIn fourth" value="Log In">
 		    </form>
 
