@@ -14,7 +14,27 @@ class C_login extends CI_Controller {
 	}
 
 	public function registration(){
-		$this->load->view('auth/registration');
+    $this->load->library('form_validation');
+    if ($this->form_validation->run() == false){
+      
+      $this->load->view('auth/registration');
+    }
+    else {
+      $data = [
+        'us_nama'=> $this->input->post('username'),
+        'us_email'=> $this->input->post('email'),
+        'us_nohp'=> $this->input->post('no_hp'),
+        'us_image'=> 'user.jpg',//grong enek gambar e
+        'us_alamat'=> $this->input->post('alamat'),
+        'us_password'=> $this->input->post('password'),
+        'us_role'=> 0,//iki rek digawe piro default e
+        'us_date_crated'=> time(),
+        'us_date_update'=> time(),
+        'us_status'=> 0,
+      ];
+      $this->db->insert('user',$data);
+    }
+   
 	}
  
 	function aksi_login(){
