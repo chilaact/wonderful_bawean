@@ -22,18 +22,21 @@
 		    </div>
 
 		    <!-- Login Form -->
-		    <form action="<?php echo base_url('aksi_login'); ?>" method="post">
-		      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username">
-		      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
-		      <input type="submit" class="fadeIn fourth" value="Log In">
-		    </form>
-
-		    <!-- Remind Passowrd -->
-		    <div id="formFooter">
-		      <a class="underlineHover" href="#">Create New Account</a><br><br>
-		      <a class="underlineHover" href="#">Forgot Password?</a>
-		    </div>
-
-		</div>
+			<form class="user" method="post" action="<?php echo base_url('C_login/registration'); ?>">
+                
+                <div class="form-group">
+                  <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" required>
+                  <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" required>
+                  <input type="text" id="no_hp" class="fadeIn second" name="no_hp" placeholder="No Telepon" required>
+                  <input type="text" id="alamat" class="fadeIn second" name="alamat" placeholder="Alamat" required>
+                  <input type="text" id="password" class="fadeIn second" name="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">
+                  Register Account
+                </button>
+              </form>
+              <div class="text-center">
+                <a class="small" href="<?=site_url('C_login/index') ?>">Already have an account? Login!</a>
+              </div>
 </body>
 </html>
