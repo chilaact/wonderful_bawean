@@ -13,27 +13,26 @@
 <body>
 
 		<div class="wrapper fadeInDown">
-		  <div id="formContent">
-		    <!-- Tabs Titles -->
+			<div id="formContent">
+				<!-- Tabs Titles -->
 
-		    <!-- Icon -->
-		    <div class="fadeIn first">
-		      <img src="<?php echo base_url() ?>assets/image/wb.png" id="icon" alt="User Icon" />
-		    </div>
+				<!-- Icon -->
+				<div class="fadeIn first">
+				<img src="<?php echo base_url() ?>assets/image/wb.png" id="icon" alt="User Icon" />
+				</div>
 
-		    <!-- Login Form -->
-		    <form action="<?php echo base_url('C_login/aksi_login'); ?>" method="post">
-		      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" required>
-		      <input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
-		      <input type="submit" class="fadeIn fourth" value="Log In">
-		    </form>
+				<!-- Login Form -->
+				<form action="<?php echo base_url('C_login/aksi_login'); ?>" method="post">
+				<input type="text" id="username" class="fadeIn second" name="username" placeholder="username" required>
+				<input type="text" id="password" class="fadeIn third" name="password" placeholder="password" required>
+				<input type="submit" class="fadeIn fourth" value="Log In">
+				</form>
 
-		    <!-- Remind Passowrd -->
-		    <div id="formFooter">
-		      <a class="underlineHover" href="<?= site_url('C_login/registration'); ?>">Create New Account</a><br><br>
-		      <a class="underlineHover" href="#">Forgot Password?</a>
-		    </div>
-
+				<!-- Remind Passowrd -->
+				<div id="formFooter">
+				<a class="underlineHover" href="<?= site_url('C_login/registration'); ?>">Create New Account</a><br><br>
+				<a class="underlineHover" href="#">Forgot Password?</a>
+				</div>
 		</div>
 </body>
 </html>
