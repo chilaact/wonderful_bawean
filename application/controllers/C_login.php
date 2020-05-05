@@ -6,9 +6,9 @@ class C_login extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('m_login');
- 
+
 	}
- 
+
 	public function index(){
 		$this->load->view('auth/login');
 	}
@@ -36,7 +36,7 @@ class C_login extends CI_Controller {
     }
    
 	}
- 
+
 	function aksi_login(){
 		
 	$username = $this->input->post('username'); // Ambil isi dari inputan username pada form login
@@ -63,7 +63,7 @@ class C_login extends CI_Controller {
       }
     }
 	}
- 
+
 	function logout(){
 		$this->session->sess_destroy();
 		redirect('C_login');
