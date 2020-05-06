@@ -50,16 +50,40 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Wisata Baru</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-       <form>
-         
-         
-       </form>
+        <form>
+            <div class="form-group">
+              <label for="nm_wis">Nama Wisata</label>
+              <input type="text" class="form-control" id="nm_wis" name="wis_nama" placeholder="Nama Wisata" required>
+            </div>
+            <div class="form-group">
+              <label for="wis_img">Gambar</label>
+              <input type="file" class="form-control" id="wis_img" name="wis_img" required>
+            </div>
+            <div class="form-group">
+              <label for="desc_s">Deskripsi Singkat</label>
+              <input type="text" class="form-control" id="desc_s" name="wis_desc_short" placeholder="Deskripsi Singkat" required>
+            </div>
+            <div class="form-group">
+              <label for="desc_l">Deskripsi Panjang</label>
+              <textarea class="form-control" id="desc_l" name="wis_desc_long" placeholder="Masukkan Deskripsi" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="hrg_b">Harga Hari Biasa</label>
+              <input type="text" class="form-control" id="hrg_b" name="wis_hrg_weekday" required>
+            </div>
+            <div class="form-group">
+              <label for="hrg_l">Harga Hari Libur</label>
+              <input type="text" class="form-control" id="hrg_l" name="wis_hrg_weekend" required>
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -69,7 +93,7 @@
   </div>
 </div>
 
-
+<small id="emailHelp" class="form-text text-muted">Minimal 6 Karakter</small>
 <script>
   
   $('#addwis').on('shown.bs.modal', function () {
