@@ -20,7 +20,7 @@
 				<div class="fadeIn first">
 				<img src="<?php echo base_url() ?>assets/image/wb.png" id="icon" alt="User Icon" />
 				</div>
-		    <!-- Login Form -->
+		    <!-- Login Form aja -->
 			<form class="user" method="post" action="<?php echo base_url('C_login/aksiRegister'); ?>">
                 
                 <div class="form-group">
