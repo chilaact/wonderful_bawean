@@ -5,9 +5,9 @@ class C_admin extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();		
- 		$this->load->model('M_wisata');
+		$this->load->model('M_wisata');
 	}
- 
+
 	public function index(){
 		$this->load->view('templates/admin/header');
 		$this->load->view('templates/admin/sidebar');
