@@ -23,10 +23,10 @@ class C_login extends CI_Controller {
       'us_nama'=> $this->input->post('username'),
       'us_email'=> $this->input->post('email'),
       'us_nohp'=> $this->input->post('no_hp'),
-      'us_img'=> 'user.jpg',//grong enek gambar e
+      'us_img'=> 'user.jpg',
       'us_alamat'=> $this->input->post('alamat'),
       'us_password'=> md5($this->input->post('password')),
-      'us_role'=> 0,//iki rek digawe piro default e
+      'us_role'=> 0,
       'us_date_created'=> time(),
       'us_date_update'=> time(),
       'us_status'=> 0,
