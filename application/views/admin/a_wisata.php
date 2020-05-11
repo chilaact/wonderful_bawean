@@ -1,10 +1,8 @@
 <h3>Daftar Wisata</h3>
 
-<?php 
-    $no = 1;
-    foreach ($wisata as $wis ):
- ?>
+
 <table class="table table-hover">
+
   <thead>
     <tr>
       <th scope="col">No</th>
@@ -23,8 +21,14 @@
       
     </tr>
   </thead>
+
   <tbody>
+    <?php 
+    $no = 1;
+    foreach ($wisata as $wis ):
+ ?>
     <tr>
+
       <th scope="row"><?php echo $no; $no++; ?></th>
       <td><?php echo $wis->wis_nama; ?></td>
       <td><?php echo $wis->wis_img; ?></td>
@@ -35,13 +39,14 @@
       <td><?php echo $wis->wis_kuota_weekday; ?></td>
       <td><?php echo $wis->wis_kuota_weekend; ?></td>
       <td><?php echo $wis->wis_status; ?></td>
-      <td><button class="btn btn-primary">Edit</button></td>
-      <td><button class="btn btn-danger">Delete</button></td>
+      <td><a class="btn btn-primary" href="anjay">Edit</a></td>
+      <td><a class="btn btn-danger" href="<?php echo ('deletewis/'.$wis->wis_id) ?>">Delete</a></td>
     </tr>
+    <?php endforeach ?>
   </tbody>
 </table>
 
-<?php endforeach ?>
+
 
 <button type="button" class="btn btn-primary" style="width: 200px; margin-left: 10px" data-toggle="modal" data-target="#addwis"><i class="fas fa-plus"></i>Tambah Wisata Baru</button>
 
@@ -56,7 +61,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="createwis" method="post">
             <div class="form-group">
               <label for="nm_wis">Nama Wisata</label>
               <input type="text" class="form-control" id="nm_wis" name="wis_nama" placeholder="Nama Wisata" required>
