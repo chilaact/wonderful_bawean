@@ -29,6 +29,10 @@
                 <li><a href="#" class="nav-link">Pesanan</a></li>
                 <li><a href="#" class="nav-link">Profile</a></li>
                 <li><a href="<?= base_url('C_login/logout'); ?>" class="nav-link">Logout</a></li>
+                <li><form action="search" method="post">
+                <input type="text" name="keyword" placeholder="search...">
+                <input type="submit" name="submit_search" value="search">
+              </form></li>
               </ul>
             </nav>
           </div>

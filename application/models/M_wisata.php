@@ -17,4 +17,12 @@ class M_wisata extends CI_Model
 		}
 
 	}
+
+	public function get_search_keyword($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('wisata');
+		$this->db->like('wis_nama', $keyword);
+		return $this->db->get()->result();
+	}
 }

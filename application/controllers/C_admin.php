@@ -25,5 +25,37 @@ class C_admin extends CI_Controller {
 		$this->load->view('templates/admin/footer');
 	
 	}
+
+	public function createwis(){
+		$wis_nama = $this->input->post('wis_nama');
+		$wis_img = $this->input->post('wis_img');
+		$wis_desc_short = $this->input->post('wis_desc_short');
+		$wis_desc_long = $this->input->post('wis_desc_long');
+		$wis_hrg_weekday = $this->input->post('wis_hrg_weekday');
+		$wis_hrg_weekend = $this->input->post('wis_hrg_weekend');
+		
+		$datawis = array(
+			'wis_nama' => $wis_nama,
+			'wis_img' => $wis_img,
+			'wis_desc_short' => $wis_desc_short,
+			'wis_desc_long' => $wis_desc_long,
+			'wis_hrg_weekday' => $wis_hrg_weekday,
+			'wis_hrg_weekend'=> $wis_hrg_weekend,
+			'wis_kuota_weekday' => '100',
+			'wis_kuota_weekend' => '200'
+		);
+
+		$this->db->insert('wisata' , $datawis);
+		redirect('C_admin/wisata');
+
+	}
+
+	public function deletewis($wis_id){
+		$id = array('wis_id' => $wis_id);
+
+		$this->db->where($id);
+		$this->db->delete('wisata');
+		redirect('C_admin/wisata');
+	}
 }
 ?> 
