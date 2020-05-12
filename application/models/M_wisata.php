@@ -25,4 +25,24 @@ class M_wisata extends CI_Model
 		$this->db->like('wis_nama', $keyword);
 		return $this->db->get()->result();
 	}
+
+	function getWisataForPesanan(){
+		if (isset($_SESSION['pesanan'])) {
+			$temp = array();
+			$temp_data = array();
+			foreach ($_SESSION['pesanan'] as $value) {
+				array_push($temp, $value);
+			}
+			$result = $this->db->from('wisata')
+								->where_in('wis_id',$temp);
+			// var_dump($result->get());
+			$custom = $result->get()->result_object();
+			$temp = array();
+			foreach ($custom as $value) {
+				$temp[$value->wis_id] = $value;
+			}
+			return $temp;
+		}
+
+	}
 }
