@@ -79,7 +79,6 @@ class C_login extends CI_Controller {
       $password = $this->input->post('password'); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
       $user = $this->m_login->getuser($username); // Panggil fungsi get yang ada di UserModel.php
   
-  
       if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
         $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
         // echo "gk ada";
@@ -94,7 +93,7 @@ class C_login extends CI_Controller {
                 'nama'=>$user->nama // Buat session authenticated
               );
               $this->session->set_userdata($session); // Buat session sesuai $session
-              redirect('C_wisata'); // ini nggatau kemana ya, ke view daf_wis
+              redirect('C_home'); // ini nggatau kemana ya, ke view daf_wis
           }else {
             $this->session->set_flashdata('message', 'Anda Bukan User'); // Buat session flashdata
             redirect('C_login'); // Redirect ke halaman login
@@ -108,6 +107,6 @@ class C_login extends CI_Controller {
 
 	function logout(){
 		$this->session->sess_destroy();
-		redirect('C_login');
+		redirect('C_home');
 	}
 }
