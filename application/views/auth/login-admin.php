@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login User</title>
+	<title>Login Admin</title>
 
 		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -22,20 +22,16 @@
 				</div>
 
 				<!-- Login Form -->
-				<form action="<?php echo base_url('C_login/aksi_login_user'); ?>" method="post">
+				<form action="<?php echo base_url('C_login/aksi_login_admin'); ?>" method="post">
 				<input type="text" id="username" class="fadeIn second" name="email" placeholder="Email" required>
 				<input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
 				<input type="submit" class="fadeIn fourth" value="Log In">
-				</form>
 				<p><?php if ($this->session->flashdata('message')) {
 							echo "- ".$this->session->flashdata('message')." -";
 				} ?></p>
+				
+				</form>
 
-				<!-- Remind Passowrd -->
-				<div id="formFooter">
-				<a class="underlineHover" href="<?= site_url('C_login/registration'); ?>">Create New Account</a><br><br>
-				<a class="underlineHover" href="#">Forgot Password?</a>
-				</div>
 		</div>
 </body>
 </html>

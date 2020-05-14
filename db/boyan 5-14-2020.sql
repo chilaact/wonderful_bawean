@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2020 at 06:58 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Waktu pembuatan: 14 Bulan Mei 2020 pada 16.24
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fasilitas`
+-- Struktur dari tabel `fasilitas`
 --
 
 CREATE TABLE `fasilitas` (
@@ -39,7 +39,7 @@ CREATE TABLE `fasilitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `fasilitas`
+-- Dumping data untuk tabel `fasilitas`
 --
 
 INSERT INTO `fasilitas` (`fas_id`, `wis_id`, `fas_nama`, `fas_icon`, `fas_date_created`, `fas_date_update`, `fas_status`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `fasilitas` (`fas_id`, `wis_id`, `fas_nama`, `fas_icon`, `fas_date_c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fas_hotel`
+-- Struktur dari tabel `fas_hotel`
 --
 
 CREATE TABLE `fas_hotel` (
@@ -64,7 +64,7 @@ CREATE TABLE `fas_hotel` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `halaman`
+-- Struktur dari tabel `halaman`
 --
 
 CREATE TABLE `halaman` (
@@ -79,7 +79,7 @@ CREATE TABLE `halaman` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel`
+-- Struktur dari tabel `hotel`
 --
 
 CREATE TABLE `hotel` (
@@ -100,7 +100,7 @@ CREATE TABLE `hotel` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pesan`
+-- Struktur dari tabel `pesan`
 --
 
 CREATE TABLE `pesan` (
@@ -121,7 +121,7 @@ CREATE TABLE `pesan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -133,15 +133,25 @@ CREATE TABLE `user` (
   `us_alamat` varchar(200) NOT NULL,
   `us_password` varchar(256) NOT NULL,
   `us_role` int(11) NOT NULL,
-  `us_date_created` int(11) NOT NULL,
+  `us_date_created` date NOT NULL,
   `us_date_update` date NOT NULL,
   `us_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `user`
+--
+
+INSERT INTO `user` (`us_id`, `us_nama`, `us_email`, `us_nohp`, `us_img`, `us_alamat`, `us_password`, `us_role`, `us_date_created`, `us_date_update`, `us_status`) VALUES
+(1, 'Admin', 'admin@gmail.com', '0909090', '-', 'alamat admin', '21232f297a57a5a743894a0e4a801fc3', 0, '2020-05-14', '2020-05-14', 1),
+(2, 'User', 'user@gmail.com', '28173921', 'sadsad', 'sdlkjajd', 'ee11cbb19052e40b07aac0ca060c23ee', 1, '2020-05-14', '2020-05-14', 1),
+(3, 'user', 'userr@gmail.com', '012930193', 'user.jpg', 'sdada', 'ee11cbb19052e40b07aac0ca060c23ee', 1, '0000-00-00', '0000-00-00', 1),
+(4, 'test@gmail.com', 'test@gmail.com', '08090', 'user.jpg', 'sjdkajhd', '147538da338b770b61e592afc92b1ee6', 1, '2020-05-14', '2020-05-14', 1);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wisata`
+-- Struktur dari tabel `wisata`
 --
 
 CREATE TABLE `wisata` (
@@ -160,7 +170,7 @@ CREATE TABLE `wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `wisata`
+-- Dumping data untuk tabel `wisata`
 --
 
 INSERT INTO `wisata` (`wis_id`, `wis_nama`, `wis_img`, `wis_desc_short`, `wis_desc_long`, `wis_hrg_weekday`, `wis_hrg_weekend`, `wis_kuota_weekday`, `wis_kuota_weekend`, `wis_date_created`, `wis_date_update`, `wis_status`) VALUES
@@ -170,7 +180,7 @@ INSERT INTO `wisata` (`wis_id`, `wis_nama`, `wis_img`, `wis_desc_short`, `wis_de
 -- --------------------------------------------------------
 
 --
--- Table structure for table `wis_fasilitas`
+-- Struktur dari tabel `wis_fasilitas`
 --
 
 CREATE TABLE `wis_fasilitas` (
@@ -183,27 +193,27 @@ CREATE TABLE `wis_fasilitas` (
 --
 
 --
--- Indexes for table `fasilitas`
+-- Indeks untuk tabel `fasilitas`
 --
 ALTER TABLE `fasilitas`
   ADD PRIMARY KEY (`fas_id`),
   ADD KEY `wis_id` (`wis_id`);
 
 --
--- Indexes for table `fas_hotel`
+-- Indeks untuk tabel `fas_hotel`
 --
 ALTER TABLE `fas_hotel`
   ADD PRIMARY KEY (`fas_hot_id`),
   ADD KEY `hot_id` (`hot_id`);
 
 --
--- Indexes for table `hotel`
+-- Indeks untuk tabel `hotel`
 --
 ALTER TABLE `hotel`
   ADD PRIMARY KEY (`hot_id`);
 
 --
--- Indexes for table `pesan`
+-- Indeks untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`odr_id`),
@@ -212,82 +222,82 @@ ALTER TABLE `pesan`
   ADD KEY `hot_id` (`hot_id`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`us_id`);
 
 --
--- Indexes for table `wisata`
+-- Indeks untuk tabel `wisata`
 --
 ALTER TABLE `wisata`
   ADD PRIMARY KEY (`wis_id`);
 
 --
--- Indexes for table `wis_fasilitas`
+-- Indeks untuk tabel `wis_fasilitas`
 --
 ALTER TABLE `wis_fasilitas`
   ADD KEY `wis_id` (`wis_id`,`fas_id`),
   ADD KEY `fas_id` (`fas_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `fasilitas`
+-- AUTO_INCREMENT untuk tabel `fasilitas`
 --
 ALTER TABLE `fasilitas`
   MODIFY `fas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `fas_hotel`
+-- AUTO_INCREMENT untuk tabel `fas_hotel`
 --
 ALTER TABLE `fas_hotel`
   MODIFY `fas_hot_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hotel`
+-- AUTO_INCREMENT untuk tabel `hotel`
 --
 ALTER TABLE `hotel`
   MODIFY `hot_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pesan`
+-- AUTO_INCREMENT untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   MODIFY `odr_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `us_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `wisata`
+-- AUTO_INCREMENT untuk tabel `wisata`
 --
 ALTER TABLE `wisata`
   MODIFY `wis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `fasilitas`
+-- Ketidakleluasaan untuk tabel `fasilitas`
 --
 ALTER TABLE `fasilitas`
   ADD CONSTRAINT `fasilitas_ibfk_1` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `fas_hotel`
+-- Ketidakleluasaan untuk tabel `fas_hotel`
 --
 ALTER TABLE `fas_hotel`
   ADD CONSTRAINT `fas_hotel_ibfk_1` FOREIGN KEY (`hot_id`) REFERENCES `hotel` (`hot_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `pesan`
+-- Ketidakleluasaan untuk tabel `pesan`
 --
 ALTER TABLE `pesan`
   ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`us_id`) REFERENCES `user` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE,
