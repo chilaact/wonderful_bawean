@@ -36,11 +36,11 @@ class C_login extends CI_Controller {
     
   }
 
-	function aksi_login(){
+	function aksi_login_admin(){
 		
 	$username = $this->input->post('email'); // Ambil isi dari inputan username pada form login
     $password = $this->input->post('password'); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
-    $user = $this->m_login->get($username); // Panggil fungsi get yang ada di UserModel.php
+    $user = $this->m_login->getadmin($username); // Panggil fungsi get yang ada di UserModel.php
 
 
     if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
@@ -61,7 +61,34 @@ class C_login extends CI_Controller {
         redirect('C_login/index'); // Redirect ke halaman login
       }
     }
-	}
+  }
+  
+  function aksi_login_user(){
+		
+    $username = $this->input->post('email'); // Ambil isi dari inputan username pada form login
+      $password = $this->input->post('password'); // Ambil isi dari inputan password pada form login dan encrypt dengan md5
+      $user = $this->m_login->getuser($username); // Panggil fungsi get yang ada di UserModel.php
+  
+  
+      if(empty($user)){ // Jika hasilnya kosong / user tidak ditemukan
+        $this->session->set_flashdata('message', 'Username tidak ditemukan'); // Buat session flashdata
+        // echo "gk ada";
+        // redirect('auth/login'); // Redirect ke halaman login
+      }else{
+        if(md5($password) == $user->us_password){ // Jika password yang diinput sama dengan password yang didatabase
+          $session = array(
+            'authenticated'=>true, // Buat session authenticated dengan value true
+            'username'=>$user->username,  // Buat session username
+            'nama'=>$user->nama // Buat session authenticated
+          );
+          $this->session->set_userdata($session); // Buat session sesuai $session
+          redirect('C_admin/index'); // ini nggatau kemana ya, ke view daf_wis
+        }else{
+          $this->session->set_flashdata('message', 'Password salah'); // Buat session flashdata
+          redirect('C_login/index'); // Redirect ke halaman login
+        }
+      }
+    }
 
 	function logout(){
 		$this->session->sess_destroy();
