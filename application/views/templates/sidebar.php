@@ -23,11 +23,11 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#daftar-wisata-section" class="nav-link">Daftar Wisata</a></li>
+                <li><a href="<?= base_url('C_wisata/index'); ?>" class="nav-link">Home</a></li>
+                <li><a href="<?= base_url('C_wisata/index'); ?>" class="nav-link">Daftar Wisata</a></li>
                 <li><a href="#" class="nav-link">Hotel & Penginapan</a></li>
                 <li><a href="#" class="nav-link">Pesanan</a></li>
-                <li><a href="#" class="nav-link">Profile</a></li>
+                <li><a href="<?= base_url('C_wisata/profil'); ?>" class="nav-link">Profile</a></li>
                 <li><a href="<?= base_url('C_login/logout'); ?>" class="nav-link">Logout</a></li>
                 <li><form action="search" method="post">
                 <input type="text" name="keyword" placeholder="search...">

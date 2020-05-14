@@ -31,4 +31,11 @@ class C_wisata extends CI_Controller {
 		$this->load->view('user/daf_wis', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function profil(){
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('user/profile');
+		$this->load->view('templates/footer');
+	}
 }
