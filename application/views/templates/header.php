@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/aos.css">
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
+
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/profile-style.css"/>
+    
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
