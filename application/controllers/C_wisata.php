@@ -38,4 +38,19 @@ class C_wisata extends CI_Controller {
 		$this->load->view('user/profile');
 		$this->load->view('templates/footer');
 	}
+	
+	public function pesan_wis($id){
+		
+		$pes_wis = $this->M_wisata->find($id);
+		$data = array(
+			'id'      => $pes_wis->wis_id,
+			'qty'     => 1,
+			'price'   => $pes_wis->wis_hrg_weekday,
+			'name'    => $pes_wis->wis_nama,
+			
+	);
+	
+	$this->cart->insert($data);
+	redirect('C_wisata');
+	}
 }
