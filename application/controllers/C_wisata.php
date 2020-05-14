@@ -26,7 +26,6 @@ class C_wisata extends CI_Controller {
 	public function search(){
 		$keyword = $this->input->post('keyword');
 		$data['wisata']=$this->M_wisata->get_search_keyword($keyword);
-		// $this->load->view('search', $data);
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('user/daf_wis', $data);

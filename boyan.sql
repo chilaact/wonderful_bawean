@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2020 at 03:11 PM
+-- Generation Time: May 14, 2020 at 06:58 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -38,6 +38,29 @@ CREATE TABLE `fasilitas` (
   `fas_status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `fasilitas`
+--
+
+INSERT INTO `fasilitas` (`fas_id`, `wis_id`, `fas_nama`, `fas_icon`, `fas_date_created`, `fas_date_update`, `fas_status`) VALUES
+(1, 1, 'Musholla', '', '2020-02-03', '2020-04-28', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fas_hotel`
+--
+
+CREATE TABLE `fas_hotel` (
+  `fas_hot_id` int(11) NOT NULL,
+  `hot_id` int(11) NOT NULL,
+  `fas_hot_nama` varchar(200) NOT NULL,
+  `fas_hot_icon` text NOT NULL,
+  `fas_hot_date_created` date NOT NULL,
+  `fas_hot_date_update` date NOT NULL,
+  `fas_hot_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- --------------------------------------------------------
 
 --
@@ -56,6 +79,27 @@ CREATE TABLE `halaman` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `hotel`
+--
+
+CREATE TABLE `hotel` (
+  `hot_id` int(11) NOT NULL,
+  `hot_nama` varchar(200) NOT NULL,
+  `hot_img` varchar(200) NOT NULL,
+  `hot_desc_short` text NOT NULL,
+  `hot_desc_long` text NOT NULL,
+  `hot_hrg_weekday` decimal(10,0) NOT NULL,
+  `hot_hrg_weekend` decimal(10,0) NOT NULL,
+  `hot_kuota_weekday` int(11) NOT NULL,
+  `hot_kuota_weekend` int(11) NOT NULL,
+  `hot_date_created` date NOT NULL,
+  `hot_date_update` date NOT NULL,
+  `hot_status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pesan`
 --
 
@@ -63,6 +107,7 @@ CREATE TABLE `pesan` (
   `odr_id` int(11) NOT NULL,
   `us_id` int(11) NOT NULL,
   `wis_id` int(11) NOT NULL,
+  `hot_id` int(11) NOT NULL,
   `bank_id` varchar(20) NOT NULL,
   `odr_qty` int(11) NOT NULL,
   `odr_total` decimal(10,0) NOT NULL,
@@ -119,7 +164,8 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`wis_id`, `wis_nama`, `wis_img`, `wis_desc_short`, `wis_desc_long`, `wis_hrg_weekday`, `wis_hrg_weekend`, `wis_kuota_weekday`, `wis_kuota_weekend`, `wis_date_created`, `wis_date_update`, `wis_status`) VALUES
-(1, 'danau kastoba', 'kastoba.jpg', 'Dsn. Candi-Bawean', 'Danau di atas gunung', '3000', '5000', 50, 100, '2020-02-02', '2020-04-01', 1);
+(1, 'danau kastoba', 'kastoba.jpg', 'Dsn. Candi-Bawean', 'Danau di atas gunung', '3000', '5000', 50, 100, '2020-02-02', '2020-04-01', 1),
+(2, 'Pulau Noko', 'noko.jpg', 'Ds. Sidogedungbatu-Bawean', '', '240000', '360000', 50, 100, '2020-05-01', '2020-05-11', 1);
 
 -- --------------------------------------------------------
 
@@ -144,12 +190,26 @@ ALTER TABLE `fasilitas`
   ADD KEY `wis_id` (`wis_id`);
 
 --
+-- Indexes for table `fas_hotel`
+--
+ALTER TABLE `fas_hotel`
+  ADD PRIMARY KEY (`fas_hot_id`),
+  ADD KEY `hot_id` (`hot_id`);
+
+--
+-- Indexes for table `hotel`
+--
+ALTER TABLE `hotel`
+  ADD PRIMARY KEY (`hot_id`);
+
+--
 -- Indexes for table `pesan`
 --
 ALTER TABLE `pesan`
   ADD PRIMARY KEY (`odr_id`),
   ADD KEY `us_id` (`us_id`,`wis_id`),
-  ADD KEY `wis_id` (`wis_id`);
+  ADD KEY `wis_id` (`wis_id`),
+  ADD KEY `hot_id` (`hot_id`);
 
 --
 -- Indexes for table `user`
@@ -178,7 +238,19 @@ ALTER TABLE `wis_fasilitas`
 -- AUTO_INCREMENT for table `fasilitas`
 --
 ALTER TABLE `fasilitas`
-  MODIFY `fas_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `fas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `fas_hotel`
+--
+ALTER TABLE `fas_hotel`
+  MODIFY `fas_hot_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `hotel`
+--
+ALTER TABLE `hotel`
+  MODIFY `hot_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pesan`
@@ -196,7 +268,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `wis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `wis_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -209,11 +281,18 @@ ALTER TABLE `fasilitas`
   ADD CONSTRAINT `fasilitas_ibfk_1` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `fas_hotel`
+--
+ALTER TABLE `fas_hotel`
+  ADD CONSTRAINT `fas_hotel_ibfk_1` FOREIGN KEY (`hot_id`) REFERENCES `hotel` (`hot_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `pesan`
 --
 ALTER TABLE `pesan`
   ADD CONSTRAINT `pesan_ibfk_1` FOREIGN KEY (`us_id`) REFERENCES `user` (`us_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `pesan_ibfk_2` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `pesan_ibfk_2` FOREIGN KEY (`wis_id`) REFERENCES `wisata` (`wis_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `pesan_ibfk_3` FOREIGN KEY (`hot_id`) REFERENCES `hotel` (`hot_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
