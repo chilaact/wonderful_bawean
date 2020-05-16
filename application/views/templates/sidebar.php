@@ -25,8 +25,8 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="<?= base_url('C_wisata/index'); ?>" class="nav-link">Home</a></li>
                 <li><a href="<?= base_url('C_wisata/index'); ?>" class="nav-link">Daftar Wisata</a></li>
-                <li><a href="#" class="nav-link">Hotel & Penginapan</a></li>
-                <li><?php $pesanan = 'Booking :'.$this->cart->total_items() .'items' ?> <?php echo $pesanan ?></li>
+                <li><a href="<?= base_url('C_hotel/index'); ?>" class="nav-link">Hotel & Penginapan</a></li>
+                <li><a class="nav-link"><?php $pesanan = 'Booking : '.$this->cart->total_items() .' items' ?> <?php echo $pesanan ?></a></li>
                 <li><a href="<?= base_url('C_wisata/profil'); ?>" class="nav-link">Profile</a></li>
                 <li><a href="<?= base_url('C_login/logout'); ?>" class="nav-link">Logout</a></li>
                 <li><form action="search" method="post">

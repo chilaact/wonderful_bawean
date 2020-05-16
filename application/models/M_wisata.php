@@ -7,15 +7,24 @@ class M_wisata extends CI_Model
 		return $this->db->get('wisata');
 	}
 
-	public function getDetById($wis_id)
+	public function det_wis($wis_id)
 	{
-		$result = $this->db->from('fasilitas')->join('wisata', 'fasilitas.wis_id=wisata.wis_id')->get();
+		$result = $this->db->where('wis_id',$wis_id)->get('wisata');
 		if ($result->num_rows() > 0){
 			return $result->result();
 		}else{
 			return false;
 		}
+	}
 
+	public function getFasById($wis_id)
+	{	
+		$result = $this->db->where('wis_id',$wis_id)->get('fasilitas');
+		if ($result->num_rows() > 0){
+			return $result->result();
+		}else{
+			return false;
+		}
 	}
 
 	public function get_search_keyword($keyword)

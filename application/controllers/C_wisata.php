@@ -17,7 +17,8 @@ class C_wisata extends CI_Controller {
 	}
 
 	public function detail_wis($wis_id){
-		$data['detail'] = $this->M_wisata->getDetById($wis_id);
+		$data['detwis'] = $this->M_wisata->det_wis($wis_id);
+		$data['detfas'] = $this->M_wisata->getFasById($wis_id);
 		$this->load->view('templates/header');
 		$this->load->view('user/det_wis', $data);
 		$this->load->view('templates/footer');

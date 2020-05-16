@@ -1,42 +1,41 @@
 <div class="site-section">
   <div class="container">
-   <?php foreach ($detwis as $detail) : ?>
+    <?php
+      foreach ($dethot as $detail) :
+    ?>
 
     <div class="card">
-      <h5 class="card-header">Detail Wisata</h5>
+      <h5 class="card-header">Detail Hotel</h5>
       <div class="card-body">
 
         <div class="row">
           <div class="col-md-4">
-              <img src="<?php echo base_url().'/assets/image/'.$detail->wis_img ?>" alt="FImageo" class="img-fluid">
+              <img src="<?php echo base_url().'/assets/image/'.$detail->hot_img ?>" alt="FImageo" class="img-fluid">
           </div>
           <div class="col-md-8">
-             
-            <table>
+            <table class="table table-border table-hover table striped">
               <tr>
-                <td>Nama Wisata</td>
+                <td>Nama Hotel</td>
                 <td>:</td>
-                <td><strong><?php echo $detail->wis_nama?></strong></td>
+                <td><strong><?php echo $detail->hot_nama?></strong></td>
               </tr>
               <tr>
                 <td>Alamat</td>
                 <td>:</td>
-                <td><strong><?php echo $detail->wis_desc_short?></strong></td>
+                <td><strong><?php echo $detail->hot_desc_short?></strong></td>
               </tr>
               <tr>
-                <td>Harga Tiket Weekday</td>
+                <td>Harga Kamar</td>
                 <td>:</td>
-                <td><strong>Rp. <?php echo number_format($detail->wis_hrg_weekday, 0,',','.') ?> ,-</strong></td>
+                <td><strong>Rp.  <?php echo number_format($detail->hot_hrg_weekday, 0,',','.') ?> ,-</strong></td>
               </tr>
             </table>
-
           </div>
         </div>
-           <?php endforeach; ?>
+
       </div>
     </div> 
-
-   
+  <?php endforeach; ?>
 
     <br><br>
 
@@ -49,21 +48,21 @@
                 <th scope="col">#</th>
                 <th scope="col">Nama Fasilitas</th>
               </tr>
-              <?php $no=1; foreach ($detfas as $det) : ?>
+              <?php $no=1; foreach ($detfashot as $det) : ?>
               <tr>
                 <td><?php echo $no; $no++; ?></td>
-                <td><?php echo $det->fas_nama ?></td>
+                <td><?php echo $det->fas_hot_nama ?></td>
               </tr>
                <?php endforeach; ?>
+
             </table>
           </div>
         </div>
       </div>
         <br>
-          <a href="<?php echo base_url('C_wisata/index'); ?>" class="btn btn-primary right">Kembali</a>
+          <a href="<?php echo base_url('C_hotel/index'); ?>" class="btn btn-primary right">Kembali</a>
     </div> 
-
-
+    
  </div> 
 </div>
-    
+  

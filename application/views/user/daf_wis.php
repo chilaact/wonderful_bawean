@@ -29,7 +29,7 @@
                 <div class="ftco-media-details">
                   <h3><?php echo $wis->wis_nama ?></h3>
                   <p><?php echo $wis->wis_desc_short ?></p>
-                  Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. <?php echo $wis->wis_hrg_weekday ?> ,-</span><br><br>
+                  Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. <?php echo number_format($wis->wis_hrg_weekday, 0,',','.')  ?> ,-</span><br><br>
                   <?php echo anchor('C_wisata/pesan_wis/'.$wis->wis_id, '<div class="btn btn-bg btn-danger" style="width: 10em; height: 2.5em">Pesan</div>') ?>
                   <?php echo anchor('C_wisata/detail_wis/'.$wis->wis_id, '<div class="btn btn-bg btn-primary" style="width: 10em; height: 2.5em ">Detail</div>') ?>
                 </div>
