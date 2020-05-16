@@ -60,6 +60,29 @@ class C_wisata extends CI_Controller {
 	);
 	
 	$this->cart->insert($data);
-	redirect('C_wisata');
+	redirect('C_wisata/daftar_wis');
+	}
+	
+	
+	public function detail_pes_wis()
+	{
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('user/pes_wis');
+		$this->load->view('templates/footer');
+	}
+
+	public function hapus_pes_wis()
+	{
+		$this->cart->destroy();
+		redirect('C_wisata/daftar_wis');
+	}
+
+	public function pem_pes_wis()
+	{
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('user/pembayaran_wis');
+		$this->load->view('templates/footer');
 	}
 }
