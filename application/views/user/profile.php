@@ -63,7 +63,7 @@
                 <tr>
                     <td>Nama</td>
                     <td style="text-align: center;">:</td>
-                    <td>user name</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Email</td>

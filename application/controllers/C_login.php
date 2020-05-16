@@ -93,7 +93,7 @@ class C_login extends CI_Controller {
                 'nama'=>$user->nama // Buat session authenticated
               );
               $this->session->set_userdata($session); // Buat session sesuai $session
-              redirect('C_home'); // ini nggatau kemana ya, ke view daf_wis
+              redirect('C_wisata'); // ke view daf_wis
           }else {
             $this->session->set_flashdata('message', 'Anda Bukan User'); // Buat session flashdata
             redirect('C_login'); // Redirect ke halaman login

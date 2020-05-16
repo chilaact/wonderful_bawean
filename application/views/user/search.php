@@ -1,26 +1,9 @@
-  <div class="site-block-wrap" style="height: 5em">
-    <div class="owl-carousel with-dots">
-      <div class="site-blocks-cover overlay overlay" style="background-color: #5F9EA0; height: 5em" data-aos="fade" id="home-section">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-md-6 mt-lg-5 text-center">
-              <h1 class="text-shadow"> DAFTAR WISATA</h1>
-              <p class="mb-5 text-shadow">Various tours that can make a trip or holiday more fun and exciting experience on an island called the princess island !</p>
-              <p><a href="#daftar-wisata-section" class="btn btn-primary px-5 py-3">Get Started</a></p>
-              
-            </div>
-          </div>
-        </div>    
-      </div>  
-    </div>     
-  </div>      
-
-
-  <div class="site-section" id="daftar-wisata-section">
-      <div class="container">
+   <div class="site-section" style="background-color: #5F9EA0;" id="daftar-wisata-section">
+    <br>
+      <div class="container" >
         <div class="row large-gutters">
 
-        	<?php foreach ($wisata as $wis) : ?>
+          <?php foreach ($wisata as $wis) : ?>
 
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
             <div class="ftco-media-1">
@@ -38,7 +21,7 @@
             </div>
           </div>
 
-          	<?php endforeach; ?>
+            <?php endforeach; ?>
 
         </div>
       </div>

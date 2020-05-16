@@ -32,7 +32,16 @@ class M_wisata extends CI_Model
 		$this->db->select('*');
 		$this->db->from('wisata');
 		$this->db->like('wis_nama', $keyword);
-		return $this->db->get()->result();
+		$query1 = $this->db->get_compiled_select();
+
+		$this->db->select('*');
+		$this->db->from('hotel');
+		$this->db->like('hot_nama', $keyword);
+		$query2 = $this->db->get_compiled_select();
+
+		$query = $this->db->query($query1 . ' UNION ' . $query2);
+
+		return $query->result();
 	}
 
 	public function find($id)

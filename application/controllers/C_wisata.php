@@ -5,10 +5,18 @@ class C_wisata extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('M_wisata');		
+		$this->load->model('M_wisata');
+		$this->load->model('M_login');		
 	}
  
 	public function index(){
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('user/us_home');
+		$this->load->view('templates/footer');
+	}
+
+	public function daftar_wis(){
 		$data['wisata'] = $this->M_wisata->tampil_data()->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
@@ -29,7 +37,7 @@ class C_wisata extends CI_Controller {
 		$data['wisata']=$this->M_wisata->get_search_keyword($keyword);
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('user/daf_wis', $data);
+		$this->load->view('user/search', $data);
 		$this->load->view('templates/footer');
 	}
 

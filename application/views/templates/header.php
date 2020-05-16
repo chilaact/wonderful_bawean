@@ -31,4 +31,4 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     
   </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="background-color: #5F9EA0">

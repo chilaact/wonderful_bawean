@@ -44,7 +44,7 @@
   <div class="site-block-wrap">
     <div class="owl-carousel with-dots">
       <div class="site-blocks-cover overlay overlay-2" data-aos="fade" id="home-section">
-        <img src="<?php echo base_url() ?>assets/image/bwn.jpeg">       
+        <img src="<?php echo base_url() ?>assets/image/kpl.jpg">       
       </div>  
   
       <div class="site-blocks-cover overlay overlay-2" data-aos="fade" id="home-section">

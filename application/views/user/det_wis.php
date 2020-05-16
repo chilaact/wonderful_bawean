@@ -1,4 +1,4 @@
-<div class="site-section">
+<div class="site-section" style="background-color: #5F9EA0">
   <div class="container">
    <?php foreach ($detwis as $detail) : ?>
 
