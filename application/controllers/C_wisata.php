@@ -10,9 +10,10 @@ class C_wisata extends CI_Controller {
 	}
  
 	public function index(){
+		$data['user'] = $this->session->userdata('user');
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('user/us_home');
+		$this->load->view('user/us_home', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -42,9 +43,10 @@ class C_wisata extends CI_Controller {
 	}
 
 	public function profil(){
+		$data['user'] = $this->session->userdata('user');
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('user/profile');
+		$this->load->view('user/profile', $data);
 		$this->load->view('templates/footer');
 	}
 	

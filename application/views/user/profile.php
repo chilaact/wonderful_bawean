@@ -4,7 +4,8 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
-              <h1 class="text-shadow">My Profile</h1>             
+              <h1 class="text-shadow">My Profile</h1>   
+              <p>Update Your Profile Account !</p>          
             </div>
           </div>
         </div>    
@@ -22,8 +23,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <img src="http://lorempixel.com/200/200/abstract/1/" alt="Texto Alternativo" class="img-circle img-thumbnail">
-                        <h2>Nama User</h2>
+                        <img src="<?php echo base_url().'/assets/image/'.$user->us_img ?>">
+                        <h2><?= $user->us_nama ?></h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                         tempor incididunt ut labore et dolore magna aliqua.</p>
                         <div class="btn-group">
@@ -63,22 +64,22 @@
                 <tr>
                     <td>Nama</td>
                     <td style="text-align: center;">:</td>
-                    <td></td>
+                    <td><?= $user->us_nama ?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td style="text-align: center;">:</td>
-                    <td>-</td>
+                    <td><?= $user->us_email ?></td>
                 </tr>
                 <tr>
                     <td>No HP</td>
                     <td style="text-align: center;">:</td>
-                    <td>-</td>
+                    <td><?= $user->us_nohp ?></td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
                     <td style="text-align: center;">:</td>
-                    <td>-</td>
+                    <td><?= $user->us_alamat ?></td>
                 </tr>
             </table>
         </form>

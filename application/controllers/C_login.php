@@ -89,7 +89,9 @@ class C_login extends CI_Controller {
           if ($user->us_role == 1) {
               $session = array(
                 'authenticated'=>true, // Buat session authenticated dengan value true
-                'username'=>$user->username,  // Buat session username
+                'user'=>$user, // Buat Session Data User
+                'username'=>$user->us_nama,  // Buat session username
+                'us_email'=>$user->us_email, // Buat Session Email User
                 'nama'=>$user->nama // Buat session authenticated
               );
               $this->session->set_userdata($session); // Buat session sesuai $session
