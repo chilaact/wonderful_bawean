@@ -1,0 +1,40 @@
+<?php 
+
+class M_inv_wis extends CI_Model{
+
+    public function index(){
+        $us_id=$this->input->post('us_id');
+        $atasnama=$this->input->post('atasnama');
+        $tgl_pesan=$this->input->post('tgl_pesan');
+        $inv_wis= array(
+            'us_id'=>$us_id,
+            'atasnama'=>$atasnama,
+            'tgl_pesan'=>$tgl_pesan
+        );
+        $this->db->insert('inv_wis',$inv_wis);
+        $id_inv_wis=$this->db->insert_id();
+
+        foreach ($this->cart->contents() as $item) {
+            $data= array(
+                'id_inv_wis'=>$id_inv_wis,
+                'wis_id'=>$item['id'],
+                'wis_nama'=>$item['name'],
+                'jumlah'=>$item['qty'],
+                'wis_hrg_weekday'=>$item['price']
+            );
+            $this->db->insert('pesanan_wis',$data);
+        }
+        return TRUE;
+    }
+
+    public function tampil_data()
+    {
+       $result= $this->db->get('inv_wis');
+       if ($result->num_rows()>0) {
+           return $result->result();
+       }else{
+           return false;
+       }
+    }
+
+}

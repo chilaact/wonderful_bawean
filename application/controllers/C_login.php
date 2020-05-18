@@ -90,6 +90,7 @@ class C_login extends CI_Controller {
               $session = array(
                 'authenticated'=>true, // Buat session authenticated dengan value true
                 'user'=>$user, // Buat Session Data User
+                'us_id'=>$user->us_id,//Buat session id user
                 'username'=>$user->us_nama,  // Buat session username
                 'us_email'=>$user->us_email, // Buat Session Email User
                 'nama'=>$user->nama // Buat session authenticated

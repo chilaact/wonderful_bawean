@@ -82,9 +82,27 @@ class C_wisata extends CI_Controller {
 
 	public function pem_pes_wis()
 	{
+		$data['user'] = $this->session->userdata('user');
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
-		$this->load->view('user/pembayaran_wis');
+		$this->load->view('user/pembayaran_wis',$data);
 		$this->load->view('templates/footer');
+	}
+
+	public function proses_pem_wis()
+	{
+		
+		$is_wis_processed= $this->M_inv_wis->index();
+		if ($is_wis_processed) {
+			$this->cart->destroy();
+			$this->load->view('templates/header');
+			$this->load->view('templates/sidebar');
+			$this->load->view('user/proses_pem_wis');
+			$this->load->view('templates/footer');
+		}
+		else {
+			echo "maaf pemesanan wisata gagal diproses";
+		}
+		
 	}
 }
