@@ -6,7 +6,8 @@ class C_wisata extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('M_wisata');
-		$this->load->model('M_login');		
+		$this->load->model('M_login');
+		$this->load->library('form_validation');		
 	}
  
 	public function index(){
@@ -48,6 +49,47 @@ class C_wisata extends CI_Controller {
 		$this->load->view('templates/sidebar');
 		$this->load->view('user/profile', $data);
 		$this->load->view('templates/footer');
+	}
+
+	public function edit_prof(){
+		$data['user'] = $this->session->userdata('user');
+
+		$this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+
+		if($this->form_validation->run() == false) {
+			$this->load->view('templates/header');
+			$this->load->view('user/edit_profile', $data);
+			$this->load->view('templates/footer');	
+		} else {
+
+			$name = $this->input->post('name');
+			$email = $this->input->post('email');
+
+			// $upload_image = $_FILES['image']['name'];
+
+			// if($upload_image) {
+			// 	$config['allowed_types'] = 'gif|jpg|png';
+			// 	$config['upload_path'] = './assets/image/profile/';
+
+			// 	$this->load->library('upload', $config);
+
+			// 	if ($this->upload->do_upload('image')) {
+			// 		$new_image = $this->upload->data('file_name');
+			// 		$this->db->set('image', $new_image);
+			// 	} else {
+			// 		echo $this->upload->display->errors();
+			// 	}
+			// }
+
+			$this->db->set('us_nama', $name);
+			$this->db->where('us_email', $email);
+			$this->db->update('user');
+
+			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Your Profile Has Been Update !</div>');
+			redirect('C_wisata/profil');
+
+		}
+		
 	}
 	
 	public function pesan_wis($id){
