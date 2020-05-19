@@ -57,5 +57,24 @@ class C_admin extends CI_Controller {
 		$this->db->delete('wisata');
 		redirect('C_admin/wisata');
 	}
+
+	public function inv_wis(){
+		$data['inv_wis'] = $this->M_inv_wis->tampil_data();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		
+		$this->load->view('admin/a_inv_wis',$data);
+		$this->load->view('templates/admin/footer');
+	}
+
+	public function detail_inv_wis($id_inv_wis){
+		$data['inv_wis'] = $this->M_inv_wis->ambil_id_inv($id_inv_wis);
+		$data['pes_wis'] = $this->M_inv_wis->ambil_id_pes_wis($id_inv_wis);
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		
+		$this->load->view('admin/a_detail_pesanan_wis',$data);
+		$this->load->view('templates/admin/footer');
+	}
 }
 ?> 

@@ -12,11 +12,11 @@
   <title>Admin</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url()?>assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -65,6 +65,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List</h6>
             <a class="collapse-item" href="wisata">Daftar Wisata</a>
+            <a class="collapse-item" href="inv_wis">Invoice Wisata</a>
             <a class="collapse-item" href="cards.html">Penginapan</a>
           </div>
         </div>

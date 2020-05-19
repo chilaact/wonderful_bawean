@@ -37,4 +37,22 @@ class M_inv_wis extends CI_Model{
        }
     }
 
+    public function ambil_id_inv($id_inv_wis){
+        $result=$this->db->where('id',$id_inv_wis)->limit(1)->get('inv_wis');
+        if ($result->num_rows() > 0) {
+            return $result->num_rows();
+        }else {
+            return false;
+        }
+    }
+
+    public function ambil_id_pes_wis($id_inv_wis){
+        $result=$this->db->where('id_inv_wis',$id_inv_wis)->get('pesanan_wis');
+        if ($result->num_rows() > 0) {
+            return $result->result();
+        }else {
+            return false;
+        }
+    }
+
 }
