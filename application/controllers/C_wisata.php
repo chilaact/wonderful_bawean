@@ -44,6 +44,9 @@ class C_wisata extends CI_Controller {
 	}
 
 	public function profil(){
+		$where = array('us_id' => $this->session->userdata('us_id'));
+		$data['profile'] = $this->M_wisata->get_data($where, 'user')->result();
+		
 		$data['user'] = $this->session->userdata('user');
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
@@ -51,45 +54,51 @@ class C_wisata extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function edit_prof(){
-		$data['user'] = $this->session->userdata('user');
+	public function edit_prof($us_id)
+	{
+		$where = array('us_id' => $us_id);
+		$data['edprof'] = $this->M_wisata->get_data($where, 'user')->result();
+		$this->load->view('templates/header');
+		$this->load->view('user/edit_profile', $data);
+		$this->load->view('templates/footer');
 
-		$this->form_validation->set_rules('name', 'Full Name', 'required|trim');
+	}
 
-		if($this->form_validation->run() == false) {
-			$this->load->view('templates/header');
-			$this->load->view('user/edit_profile', $data);
-			$this->load->view('templates/footer');	
-		} else {
+	public function update_prof()
+	{
+		$us_id				= $this->input->post('us_id');
+		$us_nama	 		= $this->input->post('us_nama');
+		$us_email	 		= $this->input->post('us_email');
+		$us_nohp 			= $this->input->post('us_nohp');
+		$us_alamat			= $this->input->post('us_alamat');
 
-			$name = $this->input->post('name');
-			$email = $this->input->post('email');
+		$upload_file				= $_FILES['upload_file'];
+		if ($upload_file = ''){}else{
+				$config['upload_path'] 	= './assets/image/profile';
+				$config['allowed_types']= 'gif|jpg|png';
 
-			// $upload_image = $_FILES['image']['name'];
+				$this->load->library('upload',$config);
+				if(!$this->upload->do_upload('upload_file')){
+					echo "Upload Gagal"; die();
+				}else{
+						$upload_file=$this->upload->data('file_name');
+					}
+			}
 
-			// if($upload_image) {
-			// 	$config['allowed_types'] = 'gif|jpg|png';
-			// 	$config['upload_path'] = './assets/image/profile/';
+		$data = array (
+			'us_nama'			=> $us_nama,
+			'us_email' 			=> $us_email,
+			'us_nohp' 			=> $us_nohp,
+			'us_alamat'			=> $us_alamat,
+			'us_img'			=> $upload_file,
+		);
 
-			// 	$this->load->library('upload', $config);
+		$where = array (
+			'us_id' => $us_id
+		);
 
-			// 	if ($this->upload->do_upload('image')) {
-			// 		$new_image = $this->upload->data('file_name');
-			// 		$this->db->set('image', $new_image);
-			// 	} else {
-			// 		echo $this->upload->display->errors();
-			// 	}
-			// }
-
-			$this->db->set('us_nama', $name);
-			$this->db->where('us_email', $email);
-			$this->db->update('user');
-
-			$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Your Profile Has Been Update !</div>');
-			redirect('C_wisata/profil');
-
-		}
-		
+		$this->M_wisata->update_data($where, $data, 'user');
+		redirect('C_wisata/profil');
 	}
 	
 	public function pesan_wis($id){

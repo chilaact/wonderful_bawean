@@ -21,6 +21,8 @@
 
 <div class="site-section" style="background-color: #5F9EA0;">
 
+    <?php foreach ($profile as $prof ) : ?>
+
 <div class="container">
 <br>
 <br>
@@ -29,23 +31,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div>
-                        <img src="<?php echo base_url().'/assets/image/profile/'.$user->us_img ?>">
-                        <h2><?= $user->us_nama ?></h2>
-                        <p>Member Since <?= $user->us_date_created; ?> </p>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-warning">
-                                Social</button>
-                            <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                                <span class="caret"></span><span class="sr-only">Social</span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Twitter</a></li>
-                                <li><a href="https://plus.google.com/+Jquery2dotnet/posts">Google +</a></li>
-                                <li><a href="https://www.facebook.com/jquery2dotnet">Facebook</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">Github</a></li>
-                            </ul>
-                        </div>
+                        <img style="width: 20rem; height: 25rem;" src="<?php echo base_url().'/assets/image/profile/'.$prof->us_img ?>">
+                        <h2><?= $prof->us_nama ?></h2>
+                        <p>Member Since <?= $prof->us_date_created; ?> </p>
                     </div>
                 </div>
             </div>
@@ -60,7 +48,7 @@
                     <h1>My Profile</h1>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?= base_url('C_wisata/edit_prof'); ?>">Edit</a><!-- <button type="button" class="btn btn-primary">Settings</button> --></h2>
+                    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="btn btn-primary" href="<?= base_url('C_wisata/edit_prof/'.$prof->us_id); ?>">Edit</a></h2>
                 </div>
             </div>
             
@@ -69,22 +57,22 @@
                 <tr>
                     <td>Nama</td>
                     <td style="text-align: center;">:</td>
-                    <td><?= $user->us_nama ?></td>
+                    <td><?= $prof->us_nama ?></td>
                 </tr>
                 <tr>
                     <td>Email</td>
                     <td style="text-align: center;">:</td>
-                    <td><?= $user->us_email ?></td>
+                    <td><?= $prof->us_email ?></td>
                 </tr>
                 <tr>
                     <td>No HP</td>
                     <td style="text-align: center;">:</td>
-                    <td><?= $user->us_nohp ?></td>
+                    <td><?= $prof->us_nohp ?></td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
                     <td style="text-align: center;">:</td>
-                    <td><?= $user->us_alamat ?></td>
+                    <td><?= $prof->us_alamat ?></td>
                 </tr>
             </table>
         </form>
@@ -92,7 +80,8 @@
 </div>
 </div>
         </div>
-     </div>       
+     </div>  
+     <?php endforeach; ?>     
 </div>
 </div>
 </body>

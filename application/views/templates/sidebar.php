@@ -26,7 +26,7 @@
                 <li><a href="<?= base_url('C_wisata/index'); ?>" class="nav-link">Home</a></li>
                 <li><a href="<?= base_url('C_wisata/daftar_wis'); ?>" class="nav-link">Daftar Wisata</a></li>
                 <li><a href="<?= base_url('C_hotel/index'); ?>" class="nav-link">Hotel & Penginapan</a></li>
-                <li><a class="nav-link"><?php $pes_wis ='Pesanan wisata: '.$this->cart->total_items() ?> <?php echo anchor('C_wisata/detail_pes_wis', $pes_wis) ?></a></li>
+                <li><?php $pes_wis ='Pesanan wisata: '.$this->cart->total_items() ?> <?php echo anchor('C_wisata/detail_pes_wis', $pes_wis) ?></a></li>
                 <li><a href="<?= base_url('C_wisata/profil'); ?>" class="nav-link">Profile</a></li>
                 <li><a href="<?= base_url('C_login/logout'); ?>" class="nav-link">Logout</a></li>
                 <li><form action="search" method="post">
