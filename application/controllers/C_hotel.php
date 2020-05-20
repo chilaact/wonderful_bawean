@@ -24,4 +24,44 @@ class C_hotel extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function pesan_hotel($hot_id){
+		$pes_hot = $this->M_hotel->find($id);
+		$data = array(
+			'id'      => $pes_hot->hot_id,
+			'qty'     => 1,
+			'price'   => $pes_hot->hot_hrg_weekday,
+			'name'    => $pes_hot->hot_nama,
+			
+	);
+	$this->cart->insert($data);
+	redirect('C_hotel/pem_hotel');
+	}
+	
+	public function pem_hotel()
+	{
+		$data['user'] = $this->session->userdata('user');
+		$this->load->view('templates/header');
+		$this->load->view('templates/sidebar');
+		$this->load->view('user/pembayaran_hotel',$data);
+		$this->load->view('templates/footer');
+	}
+	public function proses_pem_hot()
+	{
+		
+		$is_hot_processed= $this->M_pem_hot->index();
+		if ($is_hot_processed) {
+			$this->cart->destroy();
+			$this->load->view('templates/header');
+			$this->load->view('templates/sidebar');
+			$this->load->view('user/proses_pem_hot');
+			$this->load->view('templates/footer');
+		}
+		else {
+			echo "maaf pemesanan hotel gagal diproses";
+		}
+		
+	}
+
+
+
 }
