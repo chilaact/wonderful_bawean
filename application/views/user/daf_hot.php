@@ -30,7 +30,6 @@
                   <h3><?php echo $hotel->hot_nama ?></h3>
                   <p><?php echo $hotel->hot_desc_short ?></p>
                   <br><br>
-                  <!-- <?php echo anchor('C_wisata/pesan_wis/'.$hotel->hot_id, '<div class="btn btn-bg btn-danger" style="width: 10em; height: 2.5em">Pesan</div>') ?> -->
                   <?php echo anchor('C_hotel/detail_hot/'.$hotel->hot_id, '<div class="btn btn-bg btn-primary" style="width: 10em; height: 2.5em ">Detail</div>') ?>
                 </div>
   

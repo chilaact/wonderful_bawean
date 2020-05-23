@@ -24,6 +24,13 @@ class C_hotel extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function det_room($room_id){
+		$data['detroom'] = $this->M_hotel->getDetRoomById($room_id);
+		$this->load->view('templates/header');
+		$this->load->view('user/det_room', $data);
+		$this->load->view('templates/footer');
+	}
+
 	public function pesan_hotel($hot_id){
 		$pes_hot = $this->M_hotel->find($id);
 		$data = array(

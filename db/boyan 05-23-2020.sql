@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2020 at 03:50 AM
+-- Generation Time: May 23, 2020 at 04:55 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -50,6 +50,7 @@ INSERT INTO `fasilitas` (`fas_id`, `wis_id`, `fas_nama`, `fas_icon`) VALUES
 
 CREATE TABLE `fas_hotel` (
   `fas_hot_id` int(11) NOT NULL,
+  `hot_id` int(11) NOT NULL,
   `room_id` int(11) NOT NULL,
   `fas_hot_nama` varchar(200) NOT NULL,
   `fas_hot_icon` text NOT NULL
@@ -59,26 +60,26 @@ CREATE TABLE `fas_hotel` (
 -- Dumping data for table `fas_hotel`
 --
 
-INSERT INTO `fas_hotel` (`fas_hot_id`, `room_id`, `fas_hot_nama`, `fas_hot_icon`) VALUES
-(1, 1, 'Size Room 4x4 meters', ''),
-(2, 1, 'Double Bed', ''),
-(3, 1, 'In Bathroom', ''),
-(4, 1, 'Water Heater', '\r\n\r\n\r\n'),
-(5, 1, 'Air Conditioner', ''),
-(6, 1, 'TV Flat 34 inc', ''),
-(7, 1, 'Cupboard', ''),
-(8, 1, 'Breakfast ', ''),
-(9, 1, 'Welcome drink', ''),
-(10, 1, 'Coffee and tea in the morning', ''),
-(11, 2, 'Size room 4x4 meters', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
-(12, 2, 'Double Bed', ''),
-(13, 2, 'In Bathroom', ''),
-(14, 2, 'Tv Flat 34 inc', ''),
-(15, 2, 'Cupboard', ''),
-(16, 2, 'Breakfast ', ''),
-(17, 2, 'Air Conditioner', ''),
-(18, 2, 'Welcome drink', ''),
-(19, 2, 'Coffee and tea in the morning', '');
+INSERT INTO `fas_hotel` (`fas_hot_id`, `hot_id`, `room_id`, `fas_hot_nama`, `fas_hot_icon`) VALUES
+(20, 1, 1, 'Size Room 4x4 meters', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(21, 1, 1, 'Double Bed', ''),
+(22, 1, 1, 'In Bathroom', ''),
+(23, 1, 1, 'Water Heater', ''),
+(24, 1, 1, 'Air Conditioner', ''),
+(25, 1, 1, 'TV Flat 34 inc', ''),
+(26, 1, 1, 'Cupboard', ''),
+(27, 1, 1, 'Breakfast ', ''),
+(28, 1, 1, 'Welcome drink', ''),
+(29, 1, 1, 'Coffee and tea in the morning', ''),
+(30, 1, 2, 'Size Room 4x4 meters', '\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n'),
+(31, 1, 2, 'Double Bed', ''),
+(32, 1, 2, 'In Bathroom', ''),
+(33, 1, 2, 'Air Conditioner', ''),
+(34, 1, 2, 'TV Flat 34 inc', ''),
+(35, 1, 2, 'Cupboard', ''),
+(36, 1, 2, 'Breakfast ', ''),
+(37, 1, 2, 'Welcome drink', ''),
+(38, 1, 2, 'Coffee and tea in the morning', '');
 
 -- --------------------------------------------------------
 
@@ -275,7 +276,8 @@ ALTER TABLE `fasilitas`
 --
 ALTER TABLE `fas_hotel`
   ADD PRIMARY KEY (`fas_hot_id`),
-  ADD KEY `room_id` (`room_id`);
+  ADD KEY `room_id` (`room_id`),
+  ADD KEY `hot_id` (`hot_id`);
 
 --
 -- Indexes for table `hotel`
@@ -328,7 +330,7 @@ ALTER TABLE `fasilitas`
 -- AUTO_INCREMENT for table `fas_hotel`
 --
 ALTER TABLE `fas_hotel`
-  MODIFY `fas_hot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `fas_hot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `hotel`
@@ -380,7 +382,8 @@ ALTER TABLE `fasilitas`
 -- Constraints for table `fas_hotel`
 --
 ALTER TABLE `fas_hotel`
-  ADD CONSTRAINT `fas_hotel_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `type_room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fas_hotel_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `type_room` (`room_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fas_hotel_ibfk_2` FOREIGN KEY (`hot_id`) REFERENCES `hotel` (`hot_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `type_room`
