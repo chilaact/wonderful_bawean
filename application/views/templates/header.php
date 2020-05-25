@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/style.css">
 
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/profile-style.css"/>
+
+    <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/faq-style.css"/>
     
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>

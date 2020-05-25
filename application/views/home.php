@@ -28,6 +28,7 @@
                 <li><a href="#daftar-hotel-section" class="nav-link">Hotel & Penginapan</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                <li><a href="<?= base_url('C_home/faq'); ?>" class="nav-link">FAQ</a></li>
                 <li><a href="<?= base_url('C_login/index'); ?>" class="nav-link">Sign In</a></li>
               </ul>
             </nav>
