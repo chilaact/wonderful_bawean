@@ -17,13 +17,10 @@ class M_inv_wis extends CI_Model{
         foreach ($this->cart->contents() as $item) {
             $data= array(
                 'id_inv_wis'=>$id_inv_wis,
-                'wis_id'=>$item['id'],
-                'room_id'=>$item['id'],
-                'wis_nama'=>$item['name'],
-                'room_nama'=>$item['name'],
+                'produk_id'=>$item['id'],
+                'produk_nama'=>$item['name'],
                 'jumlah'=>$item['qty'],
-                'wis_hrg_weekday'=>$item['price'],
-                'room_hrg'=>$item['price']
+                'produk_hrg'=>$item['price'],
             );
             $this->db->insert('pesanan_wis',$data);
         }

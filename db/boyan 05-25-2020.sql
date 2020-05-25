@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Bulan Mei 2020 pada 18.00
+-- Waktu pembuatan: 25 Bulan Mei 2020 pada 18.21
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -144,7 +144,8 @@ INSERT INTO `inv_wis` (`id`, `us_id`, `atasnama`, `tgl_pesan`) VALUES
 (1, 2, 'Dobleh', '2020-05-20'),
 (2, 2, 'malka', '2020-05-30'),
 (3, 2, 'kambing', '2020-05-20'),
-(4, 2, 'kambing', '2020-05-20');
+(4, 2, 'kambing', '2020-05-20'),
+(5, 2, 'anjirrr', '2020-06-01');
 
 -- --------------------------------------------------------
 
@@ -155,25 +156,24 @@ INSERT INTO `inv_wis` (`id`, `us_id`, `atasnama`, `tgl_pesan`) VALUES
 CREATE TABLE `pesanan_wis` (
   `id_pes_wis` int(11) NOT NULL,
   `id_inv_wis` int(11) NOT NULL,
-  `wis_id` int(11) NOT NULL,
-  `room_id` int(11) NOT NULL,
-  `wis_nama` varchar(30) NOT NULL,
-  `room_nama` varchar(30) NOT NULL,
+  `produk_id` int(11) NOT NULL,
+  `produk_nama` varchar(30) NOT NULL,
   `jumlah` int(11) NOT NULL,
-  `wis_hrg_weekday` int(11) NOT NULL,
-  `room_hrg` int(11) NOT NULL
+  `produk_hrg` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data untuk tabel `pesanan_wis`
 --
 
-INSERT INTO `pesanan_wis` (`id_pes_wis`, `id_inv_wis`, `wis_id`, `room_id`, `wis_nama`, `room_nama`, `jumlah`, `wis_hrg_weekday`, `room_hrg`) VALUES
-(1, 1, 1, 0, 'danau kastoba', '', 1, 3000, 0),
-(2, 1, 2, 0, 'Pulau Noko', '', 2, 240000, 0),
-(3, 2, 1, 0, 'danau kastoba', '', 1, 3000, 0),
-(4, 2, 2, 0, 'Pulau Noko', '', 1, 240000, 0),
-(5, 4, 13, 13, 'VIP Room', 'VIP Room', 2, 225000, 225000);
+INSERT INTO `pesanan_wis` (`id_pes_wis`, `id_inv_wis`, `produk_id`, `produk_nama`, `jumlah`, `produk_hrg`) VALUES
+(1, 1, 1, 'danau kastoba', 1, 3000),
+(2, 1, 2, 'Pulau Noko', 2, 240000),
+(3, 2, 1, 'danau kastoba', 1, 3000),
+(4, 2, 2, 'Pulau Noko', 1, 240000),
+(5, 4, 13, 'VIP Room', 2, 225000),
+(6, 5, 2, 'Pulau Noko', 1, 240000),
+(7, 5, 4, 'Superior Room', 1, 250000);
 
 -- --------------------------------------------------------
 
@@ -348,13 +348,13 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT untuk tabel `inv_wis`
 --
 ALTER TABLE `inv_wis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `pesanan_wis`
 --
 ALTER TABLE `pesanan_wis`
-  MODIFY `id_pes_wis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pes_wis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `type_room`

@@ -1,9 +1,9 @@
 <div class="container-fluid">
-    <h4>Detail Pesanan <div class="btn btn-sm btn-primary">No Id_inv_wis: <?php echo $pes_wis->id_inv_wis?></div></h4>
+    <h4>Detail Pesanan</h4>
     <table class ="table table-bordered table-striped table-hover">
     <tr>
-        <th>ID Wisata</th>
-        <th>Nama Wisata</th>
+        <th>ID produk</th>
+        <th>Nama Produk</th>
         <th>Jumlah Pesanan</th>
         <th>Harga Satuan</th>
         <th>Sub-Total</th>
@@ -11,14 +11,14 @@
     <?php
     $total= 0;
     foreach ($pes_wis as $pes) :
-        $subtotal=$pes->jumlah * $pes->wis_hrg_weekday;
+        $subtotal=$pes->jumlah * $pes->produk_hrg;
         $total+=$subtotal;
     ?>
     <tr>
-        <td><?php echo $pes->wis_id ?></td>
-        <td><?php echo $pes->wis_nama ?></td>
+        <td><?php echo $pes->produk_id ?></td>
+        <td><?php echo $pes->produk_nama ?></td>
         <td><?php echo $pes->jumlah ?></td>
-        <td align="right"><?php echo number_format($pes->wis_hrg_weekday,0,',','.') ?></td>
+        <td align="right"><?php echo number_format($pes->produk_hrg,0,',','.') ?></td>
         <td align="right"><?php echo number_format($subtotal,0,',','.') ?></td>
     </tr>
     

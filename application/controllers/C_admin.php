@@ -70,7 +70,6 @@ class C_admin extends CI_Controller {
 	public function detail_inv_wis($id_inv_wis){
 		$data['inv_wis'] = $this->M_inv_wis->ambil_id_inv($id_inv_wis);
 		$data['pes_wis'] = $this->M_inv_wis->ambil_id_pes_wis($id_inv_wis);
-		print_r($data); exit;
 		$this->load->view('templates/admin/header');
 		$this->load->view('templates/admin/sidebar');
 		

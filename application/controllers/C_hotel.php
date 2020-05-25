@@ -34,10 +34,10 @@ class C_hotel extends CI_Controller {
 	public function pesan_room($id){
 		$pes_room = $this->M_hotel->find($id);
 		$data = array(
-			'id_r'      => $pes_room->room_id,
-			'qty_r'     => 1,
-			'price_r'   => $pes_room->room_hrg,
-			'name_r'    => $pes_room->room_nama,
+			'id'      => $pes_room->room_id,
+			'qty'     => 1,
+			'price'   => $pes_room->room_hrg,
+			'name'    => $pes_room->room_nama,
 			
 	);
 	
