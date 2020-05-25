@@ -31,17 +31,19 @@ class C_hotel extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function pesan_hotel($hot_id){
-		$pes_hot = $this->M_hotel->find($id);
+	public function pesan_room($id){
+		$pes_room = $this->M_hotel->find($id);
 		$data = array(
-			'id'      => $pes_hot->hot_id,
-			'qty'     => 1,
-			'price'   => $pes_hot->hot_hrg_weekday,
-			'name'    => $pes_hot->hot_nama,
+			'id_r'      => $pes_room->room_id,
+			'qty_r'     => 1,
+			'price_r'   => $pes_room->room_hrg,
+			'name_r'    => $pes_room->room_nama,
 			
 	);
+	
 	$this->cart->insert($data);
-	redirect('C_hotel/pem_hotel');
+
+	redirect('C_hotel/index');
 	}
 	
 	public function pem_hotel()

@@ -56,7 +56,7 @@
                 <td><?php echo $det->room_nama ?></td>
                 <td style="text-align: center;"><?php echo number_format($det->room_hrg, 0,',','.') ?></td>
                 <td><?php echo anchor('C_hotel/det_room/'.$det->room_id, '<div class="btn btn-bg btn-primary" style="width: 10em; height: 2.5em ">Detail</div>') ?></td>
-                <td><?php echo anchor('C_wisata/pesan_wis/'.$det->room_id, '<div class="btn btn-bg btn-danger" style="width: 10em; height: 2.5em">Pesan</div>') ?></td>
+                <td><?php echo anchor('C_hotel/pesan_room/'.$det->room_id, '<div class="btn btn-bg btn-danger" style="width: 10em; height: 2.5em">Pesan</div>') ?></td>
               </tr>
                <?php endforeach; ?>
 

@@ -41,9 +41,9 @@ class M_hotel extends CI_Model
 
 	public function find($id)
    {
-      $result = $this->db->where('hot_id',$id)
+      $result = $this->db->where('room_id',$id)
                 -> limit(1)
-                ->get('hotel');
+                ->get('type_room');
         if($result->num_rows() >0 ){
             return $result->row();
         }
@@ -51,5 +51,11 @@ class M_hotel extends CI_Model
             return array();
         }
    }
+
+   function getHotel($hot_id){
+	$hotel = $this->db->get_where('hotel',array('hot_id'=>$hot_id))
+			->result();
+	return $hotel;
+	}
 
 }
