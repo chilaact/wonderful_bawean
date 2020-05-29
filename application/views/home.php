@@ -1,113 +1,3 @@
-<html lang="en">
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap Testimonial Carousel</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  body {
-    font-family: "Open Sans", sans-serif;
-  }
-  h2 {
-    color: #333;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    position: relative;
-    margin: 30px 0 60px;
-  }
-  h2::after {
-    content: "";
-    width: 100px;
-    position: absolute;
-    margin: 0 auto;
-    height: 3px;
-    background: #8fbc54;
-    left: 0;
-    right: 0;
-    bottom: -10px;
-  }
-  .col-center {
-    margin: 0 auto;
-    float: none !important;
-  }
-  .carousel {
-    margin: 50px auto;
-    padding: 0 70px;
-  }
-  .carousel .item {
-    color: #999;
-    font-size: 14px;
-      text-align: center;
-    overflow: hidden;
-      min-height: 290px;
-  }
-  .carousel .item .img-box {
-    width: 135px;
-    height: 135px;
-    margin: 0 auto;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-  }
-  .carousel .img-box img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 50%;
-  }
-  .carousel .testimonial {
-    padding: 30px 0 10px;
-  }
-  .carousel .overview {	
-    font-style: italic;
-  }
-  .carousel .overview b {
-    text-transform: uppercase;
-    color: #7AA641;
-  }
-  .carousel .carousel-control {
-    width: 40px;
-      height: 40px;
-      margin-top: -20px;
-      top: 50%;
-    background: none;
-  }
-  .carousel-control i {
-      font-size: 68px;
-    line-height: 42px;
-      position: absolute;
-      display: inline-block;
-    color: rgba(0, 0, 0, 0.8);
-      text-shadow: 0 3px 3px #e6e6e6, 0 0 0 #000;
-  }
-  .carousel .carousel-indicators {
-    bottom: -40px;
-  }
-  .carousel-indicators li, .carousel-indicators li.active {
-    width: 10px;
-    height: 10px;
-    margin: 1px 3px;
-    border-radius: 50%;
-  }
-  .carousel-indicators li {	
-    background: #999;
-    border-color: transparent;
-    box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-  }
-  .carousel-indicators li.active {	
-    background: #555;		
-    box-shadow: inset 0 2px 1px rgba(0,0,0,0.2);
-  }
-  </style>
-  </head>
-</html>
-
  <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -137,6 +27,7 @@
                 <li><a href="#daftar-wisata-section" class="nav-link">Daftar Wisata</a></li>
                 <li><a href="#daftar-hotel-section" class="nav-link">Hotel & Penginapan</a></li>
                 <li><a href="#about-section" class="nav-link">About</a></li>
+                <li><a href="#testimonials-section" class="nav-link">Testimonial</a></li>
                 <li><a href="#contact-section" class="nav-link">Contact</a></li>
                 <li><a href="<?= base_url('C_home/faq'); ?>" class="nav-link">FAQ</a></li>
                 <li><a href="<?= base_url('C_login/index'); ?>" class="nav-link">Sign In</a></li>
@@ -176,7 +67,7 @@
                 <div class="ftco-media-details">
                   <h3>Danau Kastoba</h3>
                   <p>Dsn. Candi - BAWEAN</p>
-                  Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                  Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 3.000,-</span>
                 </div>
   
               </div> 
@@ -189,7 +80,7 @@
                     <div class="ftco-media-details">
                       <h3>Pulau Noko</h3>
                       <p>Ds. Sidogedungbatu - BAWEAN</p>
-                      Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                      Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 240.000,-</span>
                     </div> 
       
                   </div> 
@@ -202,7 +93,7 @@
                     <div class="ftco-media-details">
                       <h3>Hutan Mangrove</h3>
                       <p>Ds. Daun - BAWEAN</p>
-                      Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                      Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 5.000,-</span>
                     </div>
       
                   </div> 
@@ -216,7 +107,7 @@
                   <div class="ftco-media-details">
                     <h3>Mombhul Beach</h3>
                     <p>Ds. Sidogedungbatu - BAWEAN</p>
-                    Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                    Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 5.000,-</span>
                   </div>
     
                 </div> 
@@ -229,7 +120,7 @@
                       <div class="ftco-media-details">
                         <h3>Laccar Waterfall</h3>
                         <p>Dsn. Laccar - BAWEAN</p>
-                        Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                        Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 0,-</span>
                       </div>
         
                     </div> 
@@ -242,7 +133,7 @@
                       <div class="ftco-media-details">
                         <h3>Tanjung Ghe'en</h3>
                         <p>Ds. Komalasa - BAWEAN</p>
-                        Harga Tiket Masuk <strong class="badge badge-bg badge-success">$20,000,000</strong>
+                        Harga Tiket Masuk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="btn btn-bg btn-success" style="height: 2em"> Rp. 3.000,-</span>
                       </div>
         
                     </div> 
@@ -280,7 +171,6 @@
               </figure>
               <div class="p-3 bg-primary">
                 <h3 class="mb-2">Hotel Pusaka Bawean</h3>
-                <span class="position">Real Estate Agent</span>
               </div>
             </div>
           </div>
@@ -292,7 +182,6 @@
               </figure>
               <div class="p-3 bg-primary">
                 <h3 class="mb-2">Hotel Miranda</h3>
-                <span class="position">Real Estate Agent</span>
               </div>
             </div>
           </div>
@@ -304,7 +193,6 @@
               </figure>
               <div class="p-3 bg-primary">
                 <h3 class="mb-2">Hotel Fathin</h3>
-                <span class="position">Real Estate Agent</span>
               </div>
             </div>
           </div>
@@ -378,8 +266,6 @@
                   <li>Batu Onxy Berkualitas Tinggi</li>
                   <li>Buah Merah Khas Bawean</li>
                 </ul>
-
-                <p><a href="#" class="btn btn-primary mr-2 mb-2">Learn More</a></p>
             
           </div>
         </div>
@@ -406,19 +292,19 @@
 				<!-- Wrapper for carousel items -->
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
-						<div class="img-box"><img src="/examples/images/clients/1.jpg" alt=""></div>
+						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client1.jpg" alt=""></div>
 						<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-						<p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+						<p class="overview"><b style="color: white;">Paula Wilson</b>, Media Analyst</p>
 					</div>
 					<div class="item carousel-item">
-						<div class="img-box"><img src="/examples/images/clients/2.jpg" alt=""></div>
+						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client2.jpg" alt=""></div>
 						<p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-						<p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+						<p class="overview"><b style="color: white;">Antonio Moreno</b>, Web Developer</p>
 					</div>
 					<div class="item carousel-item">
-						<div class="img-box"><img src="/examples/images/clients/3.jpg" alt=""></div>
+						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client3.jpg" alt=""></div>
 						<p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
-						<p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
+						<p class="overview"><b style="color: white;">Michael Holz</b>, Seo Analyst</p>
 					</div>
 				</div>
 				<!-- Carousel controls -->

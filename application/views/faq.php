@@ -1,4 +1,6 @@
 <section class="faq">
+	<br>
+	<a href="<?php echo base_url('C_home/index'); ?>" class="btn btn-primary right">Kembali</a>
 	<div class="faq-left">
 		<h2>.:: FAQ ::.</h2>
 				<ul class="faq-container">
