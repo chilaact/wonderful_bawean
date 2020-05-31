@@ -65,12 +65,31 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List</h6>
             <a class="collapse-item" href="wisata">Daftar Wisata</a>
-            <a class="collapse-item" href="inv_wis">Invoice Wisata</a>
             <a class="collapse-item" href="cards.html">Penginapan</a>
           </div>
         </div>
       </li>
 
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+      
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Pesanan
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Invoice</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pesanan:</h6>
+            <a class="collapse-item" href="inv_wis">Invoice pesanan</a>
+          </div>
+        </div>
+      </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
 

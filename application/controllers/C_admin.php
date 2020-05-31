@@ -137,5 +137,13 @@ class C_admin extends CI_Controller {
 		$this->load->view('admin/a_detail_pesanan_wis',$data);
 		$this->load->view('templates/admin/footer');
 	}
+
+	public function delete_inv($id){
+		$id = array('id' => $id);
+
+		$this->db->where($id);
+		$this->db->delete('inv_wis');
+		redirect('C_admin/inv_wis');
+	}
 }
 ?> 
