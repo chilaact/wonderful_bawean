@@ -28,21 +28,31 @@ class C_admin extends CI_Controller {
 
 	public function createwis(){
 		$wis_nama = $this->input->post('wis_nama');
-		$wis_img = $this->input->post('wis_img');
 		$wis_desc_short = $this->input->post('wis_desc_short');
 		$wis_desc_long = $this->input->post('wis_desc_long');
 		$wis_hrg_weekday = $this->input->post('wis_hrg_weekday');
-		$wis_hrg_weekend = $this->input->post('wis_hrg_weekend');
+		$wis_status = $this->input->post('wis_status');
+
+		$wis_img = $_FILES['wis_img']['name'];
+		if ($wis_img = ''){}else{
+				$config['upload_path'] 	= './assets/image';
+				$config['allowed_types']= 'gif|jpg|png|jpeg';
+
+				$this->load->library('upload',$config);
+				if(!$this->upload->do_upload('wis_img')){
+					echo "Upload Gagal"; die();
+				}else{
+						$wis_img=$this->upload->data('file_name');
+					}
+			}
 		
 		$datawis = array(
 			'wis_nama' => $wis_nama,
-			'wis_img' => $wis_img,
 			'wis_desc_short' => $wis_desc_short,
 			'wis_desc_long' => $wis_desc_long,
 			'wis_hrg_weekday' => $wis_hrg_weekday,
-			'wis_hrg_weekend'=> $wis_hrg_weekend,
-			'wis_kuota_weekday' => '100',
-			'wis_kuota_weekend' => '200'
+			'wis_status' => $wis_status,
+			'wis_img' => $wis_img,
 		);
 
 		$this->db->insert('wisata' , $datawis);
