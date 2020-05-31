@@ -12,4 +12,10 @@ class M_login extends CI_Model{
         $result = $this->db->get('user')->row(); // Untuk mengeksekusi dan mengambil data hasil query
         return $result;
     }
+
+    public function checkEmail($email){
+        $this->db->where('us_email', $email); // Untuk menambahkan Where Clause : username='$username'
+        $result = $this->db->get('user')->row(); // Untuk mengeksekusi dan mengambil data hasil query
+        return $result;
+    }
 }

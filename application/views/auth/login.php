@@ -20,6 +20,9 @@
 				<div class="fadeIn first">
 				<img src="<?php echo base_url() ?>assets/image/wb.png" id="icon" alt="User Icon" />
 				</div>
+				<p><?php if ($this->session->flashdata('message')) {
+							echo "- ".$this->session->flashdata('message')." -";
+				} ?></p>
 
 				<!-- Login Form -->
 				<form action="<?php echo base_url('C_login/aksi_login_user'); ?>" method="post">
@@ -27,9 +30,6 @@
 				<input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" required>
 				<input type="submit" class="fadeIn fourth" value="Log In">
 				</form>
-				<p><?php if ($this->session->flashdata('message')) {
-							echo "- ".$this->session->flashdata('message')." -";
-				} ?></p>
 
 				<!-- Remind Passowrd -->
 				<div id="formFooter">

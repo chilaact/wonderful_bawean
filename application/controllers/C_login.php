@@ -23,6 +23,14 @@ class C_login extends CI_Controller {
   
   function aksiRegister()
   {
+    $username = $this->input->post('email');
+    $emailAvail = $this->m_login->getadmin($username);
+    if (!empty($emailAvail)) {
+      // var_dump($emailAvail);
+        $this->session->set_flashdata('message', 'Email sudah terdaftar'); // Buat session flashdata
+        return redirect('c_login/registration');
+    }
+
     $data = [
       'us_nama'=> $this->input->post('username'),
       'us_email'=> $this->input->post('email'),
@@ -36,6 +44,7 @@ class C_login extends CI_Controller {
       'us_status'=> 1,
     ];
     $this->db->insert('user',$data);
+    $this->session->set_flashdata('message', 'Pendaftaran berhasil. silahkan masuk.'); // Buat session flashdata
     redirect('c_login');
     
   }
