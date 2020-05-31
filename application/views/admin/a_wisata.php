@@ -37,8 +37,8 @@
         <td><?php echo $wis->wis_desc_long; ?></td>
         <td><?php echo $wis->wis_hrg_weekday; ?></td>
         <td><?php echo $wis->wis_status; ?></td>
-        <td><a class="btn btn-primary" href="anjay">Edit</a></td>
-        <td><a class="btn btn-danger" href="<?php echo ('deletewis/'.$wis->wis_id) ?>">Delete</a></td>
+        <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_wis/'.$wis->wis_id); ?>">Edit</a></td>
+        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletewis/'.$wis->wis_id) ?>">Delete</a></td>
       </tr>
       <?php endforeach ?>
     </tbody>

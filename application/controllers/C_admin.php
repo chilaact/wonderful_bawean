@@ -6,6 +6,7 @@ class C_admin extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_wisata');
+		$this->load->model('M_admin');
 	}
 
 	public function index(){
@@ -20,7 +21,6 @@ class C_admin extends CI_Controller {
 		$data['wisata'] = $this->M_wisata->tampil_data()->result();
 		$this->load->view('templates/admin/header');
 		$this->load->view('templates/admin/sidebar');
-		
 		$this->load->view('admin/a_wisata' , $data);
 		$this->load->view('templates/admin/footer');
 	
@@ -58,6 +58,57 @@ class C_admin extends CI_Controller {
 		$this->db->insert('wisata' , $datawis);
 		redirect('C_admin/wisata');
 
+	}
+
+	public function edit_wis($wis_id)
+	{
+		$where = array('wis_id' => $wis_id);
+		$data['edtwis'] = $this->M_wisata->get_data($where, 'wisata')->result();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		$this->load->view('admin/a_edit_wis', $data);
+		$this->load->view('templates/admin/footer');
+
+	}
+
+	public function update_wis()
+	{
+		$wis_id				= $this->input->post('wis_id');
+		$wis_nama	 		= $this->input->post('wis_nama');
+		$wis_desc_short	 	= $this->input->post('wis_desc_short');
+		$wis_desc_long		= $this->input->post('wis_desc_long');
+		$wis_hrg_weekday	= $this->input->post('wis_hrg_weekday');
+		$wis_status			= $this->input->post('wis_status');
+
+		$wis_img				= $_FILES['wis_img']['name'];
+		if ($wis_img = ''){}else{
+				$config['upload_path'] 	= './assets/image';
+				$config['allowed_types']= 'gif|jpg|png';
+				$config['overwrite']	= true;
+
+				$this->load->library('upload',$config);
+				if(!$this->upload->do_upload('wis_img')){
+					$wis_img = $this->input->post('old_image');
+				}else{
+						$wis_img=$this->upload->data('file_name');
+					}
+			}
+
+		$data = array (
+			'wis_nama'			=> $wis_nama,
+			'wis_desc_short' 	=> $wis_desc_short,
+			'wis_desc_long' 	=> $wis_desc_long,
+			'wis_hrg_weekday'	=> $wis_hrg_weekday,
+			'wis_status'		=> $wis_status,
+			'wis_img'			=> $wis_img
+		);
+
+		$where = array (
+			'wis_id' => $wis_id
+		);
+
+		$this->M_admin->update_data($where, $data, 'wisata');
+		redirect('C_admin/wisata');
 	}
 
 	public function deletewis($wis_id){
