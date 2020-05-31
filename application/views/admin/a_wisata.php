@@ -3,17 +3,16 @@
   <h3>Daftar Wisata</h3>
 
   <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#addwis"><i class="fas fa-plus fa-sm"></i> Tambah Wisata Baru</button>
+  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_admin/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Fasilitas</a>
 
   <?php echo $this->session->flashdata('msg'); ?>
-  <table class="table table-bordered table-hover ">
+  <table class="table table-bordered table-hover" width="100%">
 
     <thead>
       <tr>
         <th scope="col">No</th>
         <th scope="col">Nama Wisata</th>
-        <th scope="col">Gambar</th>
         <th scope="col">Alamat</th>
-        <th scope="col">Deskripsi</th>
         <th scope="col">Hrg Normal</th>
         <th scope="col">Status</th>
         <th colspan="3" style="text-align: center;">Action</th>
@@ -32,14 +31,12 @@
 
         <th scope="row"><?php echo $no; $no++; ?></th>
         <td><?php echo $wis->wis_nama; ?></td>
-        <td><?php echo $wis->wis_img; ?></td>
         <td><?php echo $wis->wis_desc_short; ?></td>
-        <td><?php echo $wis->wis_desc_long; ?></td>
-        <td><?php echo $wis->wis_hrg_weekday; ?></td>
+        <td style="width: 10em">Rp. <?php echo number_format($wis->wis_hrg_weekday, 0,',','.') ?> ,-</td>
         <td><?php echo $wis->wis_status; ?></td>
-        <td><a class="btn btn-success" href="<?php echo base_url().'C_admin/create'; ?>" style="width: 8em"> Add Fasilitas</a></td>
-        <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_wis/'.$wis->wis_id); ?>">Edit</a></td>
-        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletewis/'.$wis->wis_id) ?>">Delete</a></td>
+        <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_wis/'.$wis->wis_id); ?>"><i class="fa fa-edit"></i></a></td>
+        <td><a class="btn btn-warning" href="<?= base_url('C_admin/detail_wis/'.$wis->wis_id); ?>"><i class="fa fa-search-plus"></i></a></td>
+        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletewis/'.$wis->wis_id) ?>"><i class="fa fa-trash"></i></a></td>
       </tr>
       <?php endforeach ?>
     </tbody>

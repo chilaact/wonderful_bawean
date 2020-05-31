@@ -180,4 +180,48 @@ class C_admin extends CI_Controller {
 	
 	}
 
+	public function detail_wis($wis_id){
+		$data['detwis'] = $this->M_wisata->det_wis($wis_id);
+		$data['detfas'] = $this->M_wisata->getFasById($wis_id);
+		$this->load->view('templates/admin/header');
+		$this->load->view('admin/a_det_wis', $data);
+		$this->load->view('templates/admin/footer');
+	}
+
+	public function edit_fas($fas_id)
+	{
+		$where = array('fas_id' => $fas_id);
+		$data['edtfas'] = $this->M_admin->get_data($where, 'fasilitas')->result();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		$this->load->view('admin/a_edit_fas', $data);
+		$this->load->view('templates/admin/footer');
+	}
+
+	public function update_fas()
+	{
+		$wis_id				= $this->input->post('wis_id');
+		$fas_id				= $this->input->post('fas_id');
+		$fas_nama	 		= $this->input->post('fas_nama');
+
+		$data = array (
+			'wis_id' 			=> $wis_id,
+			'fas_nama'			=> $fas_nama,
+		);
+
+		$where = array (
+			'fas_id' => $fas_id
+		);
+
+		$this->M_admin->update_data($where, $data, 'fasilitas');
+		redirect(base_url().'C_admin/detail_wis/'.$wis_id);
+	}
+
+	public function deletefas($fas_id){
+		$where = array ('fas_id' => $fas_id);
+		$this->M_admin->hapus_data($where, 'fasilitas');	
+
+		redirect(base_url().'C_admin/wisata/');
+	}
+
 }

@@ -20,5 +20,15 @@ class M_admin extends CI_Model {
 		return $this->db->get('wisata')->result();
 	}
 
+	public function get_data($where, $table)
+	{
+		return $this->db->get_where($table, $where);
+	}
+
+	public function hapus_data($where, $table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 
 }
