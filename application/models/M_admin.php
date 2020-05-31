@@ -8,5 +8,17 @@ class M_admin extends CI_Model {
 		$this->db->update($table, $data);
 	}
 
+	public function insert_data($data)
+	{
+		$this->db->insert('fasilitas',$data);
+
+		return $this->db->affected_rows();
+	}
+
+	public function get_list()
+	{
+		return $this->db->get('wisata')->result();
+	}
+
 
 }

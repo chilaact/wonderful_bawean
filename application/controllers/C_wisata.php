@@ -11,7 +11,8 @@ class C_wisata extends CI_Controller {
 	}
  
 	public function index(){
-		$data['user'] = $this->session->userdata('user');
+		$where = array('us_id' => $this->session->userdata('us_id'));
+		$data['home'] = $this->M_wisata->get_data($where, 'user')->result();
 		$this->load->view('templates/header');
 		$this->load->view('templates/sidebar');
 		$this->load->view('user/us_home', $data);
@@ -72,14 +73,16 @@ class C_wisata extends CI_Controller {
 		$us_nohp 			= $this->input->post('us_nohp');
 		$us_alamat			= $this->input->post('us_alamat');
 
-		$upload_file				= $_FILES['upload_file'];
+		$upload_file		= $_FILES['upload_file'];
 		if ($upload_file = ''){}else{
 				$config['upload_path'] 	= './assets/image/profile';
 				$config['allowed_types']= 'gif|jpg|png';
+				$config['overwrite']	= true;
 
 				$this->load->library('upload',$config);
 				if(!$this->upload->do_upload('upload_file')){
-					echo "Upload Gagal"; die();
+					// echo "Upload Gagal"; die();
+					$upload_file = $this->input->post('old_image');
 				}else{
 						$upload_file=$this->upload->data('file_name');
 					}

@@ -4,7 +4,7 @@
 
   <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#addwis"><i class="fas fa-plus fa-sm"></i> Tambah Wisata Baru</button>
 
-
+  <?php echo $this->session->flashdata('msg'); ?>
   <table class="table table-bordered table-hover ">
 
     <thead>
@@ -12,11 +12,11 @@
         <th scope="col">No</th>
         <th scope="col">Nama Wisata</th>
         <th scope="col">Gambar</th>
-        <th scope="col">Des.Pendek</th>
-        <th scope="col">Des.Panjang</th>
+        <th scope="col">Alamat</th>
+        <th scope="col">Deskripsi</th>
         <th scope="col">Hrg Normal</th>
         <th scope="col">Status</th>
-        <th colspan="2" style="text-align: center;">Action</th>
+        <th colspan="3" style="text-align: center;">Action</th>
         
         
         
@@ -37,6 +37,7 @@
         <td><?php echo $wis->wis_desc_long; ?></td>
         <td><?php echo $wis->wis_hrg_weekday; ?></td>
         <td><?php echo $wis->wis_status; ?></td>
+        <td><a class="btn btn-success" href="<?php echo base_url().'C_admin/create'; ?>" style="width: 8em"> Add Fasilitas</a></td>
         <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_wis/'.$wis->wis_id); ?>">Edit</a></td>
         <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletewis/'.$wis->wis_id) ?>">Delete</a></td>
       </tr>
@@ -82,16 +83,17 @@
                 <label for="wis_img">Gambar</label>
                 <input type="file" class="form-control" id="wis_img" name="wis_img" required>
               </div>
-          
-            </div>
+
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
               <button type="submit" class="btn btn-primary">Save</button>
             </div>
           </form>
+        </div>
       </div>
     </div>
   </div>
+
 
   <small id="emailHelp" class="form-text text-muted">Minimal 6 Karakter</small>
   <script>

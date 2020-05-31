@@ -45,16 +45,32 @@
       <div class="card-body">
         <div class="row">
             <table class="table table-border">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nama Fasilitas</th>
-              </tr>
-              <?php $no=1; foreach ($detfas as $det) : ?>
-              <tr>
-                <td><?php echo $no; $no++; ?></td>
-                <td><?php echo $det->fas_nama ?></td>
-              </tr>
+              <thead>
+                <tr class="thead-light">
+                  <th scope="col">#</th>
+                  <th scope="col">Nama Fasilitas</th>
+                  <th colspan="2">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php $no=1; foreach ($detfas as $det) : ?>
+                  <tr>
+                    <th scope="row"><?php echo $no; $no++; ?></th>
+                    <td><?php echo $det->fas_nama ?></td>
+                    <td>
+                      <a href="" class="btn btn-outline-warning">
+                                    Edit
+                                </a>
+                                <!-- <?php echo base_url() ?>index.php/C_home/edit_rpen/<?php echo $pen->id_pendidikan; ?> -->
+
+                      <a href="" class="btn btn-outline-danger">
+                                    Delete
+                                </a>
+                               <!--  <?php echo base_url() ?>index.php/C_home/delete/<?php echo $pen->id_pendidikan; ?> -->
+                    </td>
+                  </tr>
                <?php endforeach; ?>
+              </tbody>
             </table>
           </div>
         </div>

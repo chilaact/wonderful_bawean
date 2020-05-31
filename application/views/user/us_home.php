@@ -5,7 +5,9 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-6 mt-lg-5 text-center">
               <h1 class="text-shadow"> WELCOME </h1>
-              <h1 class="text-shadow"> <?= $user->us_nama ?> </h1>
+              <?php foreach ($home as $home) : ?>
+              <h1 class="text-shadow"> <?= $home->us_nama ?> </h1>
+              <?php endforeach; ?>
               <h3 class="text-shadow" style="color: white;">~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~</h3>
               <p class="mb-5 text-shadow">We provide many kinds of interesting tours on Bawean Island and hotels with the best facilities. <br>We hope you enjoy it !</p>
               

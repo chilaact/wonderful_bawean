@@ -145,5 +145,39 @@ class C_admin extends CI_Controller {
 		$this->db->delete('inv_wis');
 		redirect('C_admin/inv_wis');
 	}
+
+	public function create(){
+		
+		//cek jika ada inputan dari user
+		if ($this->input->post()) {
+			//lakukan insert data
+			$input_fas = $this->input->post();
+			//print_r($input_user);
+			//exit();
+			$status = $this->M_admin->insert_data($input_fas);
+			//echo "success"; exit;
+			//pesan gagal/sukses
+			if ($status > 0) {
+				//kirim pesan sukses
+				$this->session->set_flashdata('msg',template_success_msg("Fasilitas Berhasil disimpan"));
+			}
+			else{
+				//pesan error
+				$this->session->set_flashdata('msg',template_error_msg("Fasilitas Gagal disimpan"));
+			}
+
+			redirect(base_url().'C_admin/wisata');
+		}
+		else{
+			//tampilkan form
+			$data['list'] = $this->M_admin->get_list();
+			$this->load->view('templates/admin/header');
+			$this->load->view("admin/a_add_fas",$data);
+			$this->load->view('templates/admin/footer');
+			
+
+		}
+	
+	}
+
 }
-?> 

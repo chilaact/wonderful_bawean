@@ -41,9 +41,11 @@
 				    			<img style="width: 15rem; height: 18rem;" src="<?php echo base_url().'/assets/image/profile/'.$edprof->us_img ?>" class="img-thumbnail">
 				    		</div>
 				    		<div class="col-sm-9">
-				    			<div class="custom-file">
-									  <input type="file" class="custom-file-input" id="image" name="upload_file" value="<?php echo $edprof->us_img ?>">
-									  <label class="custom-file-label" for="image">Choose file</label>
+				    			<div class="form-group row">
+								    <div class="col-sm-10">
+								      <input type="file" class="form-control" id="image" name="upload_file">
+								      <input type="hidden" name="old_image" value="<?php echo $edprof->us_img ?>">
+								    </div>
 								</div>
 				    		</div>
 				    	</div>
