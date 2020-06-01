@@ -293,18 +293,18 @@
 				<div class="carousel-inner">
 					<div class="item carousel-item active">
 						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client1.jpg" alt=""></div>
-						<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
-						<p class="overview"><b style="color: white;">Paula Wilson</b>, Media Analyst</p>
+						<p class="testimonial">Saya pernah pergi trip ke Pulau Bawean hanya berbekal nekat tanpa mencari tahu informasi apapun tentang Pulau Bawean, sehingga saya sempat kehabisan uang pada saat itu. Dengan adanya website ini, akan sangat membantu di rencana trip saya selanjutnya.</p>
+						<p class="overview"><b style="color: white;">Rizkyando Adhi </b>- Software Developer</p>
 					</div>
 					<div class="item carousel-item">
 						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client2.jpg" alt=""></div>
-						<p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh, facilisis gravida odio.</p>
-						<p class="overview"><b style="color: white;">Antonio Moreno</b>, Web Developer</p>
+						<p class="testimonial">Sebagai penduduk asli Pulau Bawean, saya sangat berterimakasih akan hadirnya website Wonderful Bawean ini. Karena ini sangat berguna dan efisien untuk menyebarluaskan informasi tentang wisata yang ada di Pulau Bawean.</p>
+						<p class="overview"><b style="color: white;">Ameliawati </b>- Web Developer</p>
 					</div>
 					<div class="item carousel-item">
 						<div class="img-box"><img src="<?php echo base_url() ?>assets/image/testimon/client3.jpg" alt=""></div>
-						<p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa. Etiam hendrerit dolor eget rutrum.</p>
-						<p class="overview"><b style="color: white;">Michael Holz</b>, Seo Analyst</p>
+						<p class="testimonial">Website ini cukup informatif, bagi saya orang yang awam akan keberadaan Pulau Bawean. Membantu sekali saat memberikan saya informasi wisata saat ingin merencanakan liburan ke Pulau Bawean.</p>
+						<p class="overview"><b style="color: white;">Atunnisa </b>- Machine Learning Developer</p>
 					</div>
 				</div>
 				<!-- Carousel controls -->
@@ -436,11 +436,11 @@
             </div>
             
             <div class="">
-              <h2 class="footer-heading mb-4">Follow Us</h2>
-                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              <h2 class="footer-heading mb-4">Follow Us on GitHub</h2>
+                <a>@GugunAP</a>
+                <a>@chilaact</a>
+                <a>@rahayuamelia</a>
+                <a>@SandyRizkyando</a>
             </div>
 
 
