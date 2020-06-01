@@ -385,13 +385,13 @@
             
             <div class="p-4 mb-3 bg-white">
               <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <p class="mb-4">Jl. Rungkut Madya No.1, Gn. Anyar, Kec. Gn. Anyar, Kota SBY, Jawa Timur 60294</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+              <p class="mb-4"><a href="#">(031) 8706369</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-0"><a href="#">humas@upnjatim.ac.id</a></p>
 
             </div>
             
@@ -408,7 +408,7 @@
             <div class="row">
               <div class="col-md-5">
                 <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
+                <p>Wonderful Bawean is an information system that is able to display tourism objects and provide information if the tourism object is selected, users can see more details of the tourism object to be searched, and can find out the admission tickets on the island of Bawean.</p>
               </div>
               <div class="col-md-3 mx-auto">
                 <h2 class="footer-heading mb-4">Quick Links</h2>
@@ -450,9 +450,7 @@
           <div class="col-md-12">
             <div class="border-top pt-5">
             <p class="copyright">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Made with ❤ by <a>17081010043, 17081010050, 17081010058, 17081010065</a>
             </p>
             </div>
           </div>
