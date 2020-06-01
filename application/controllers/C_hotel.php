@@ -72,5 +72,103 @@ class C_hotel extends CI_Controller {
 	}
 
 
+//=================================================
+
+	public function view(){
+		$data['hotel'] = $this->M_hotel->tampil_data()->result();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		$this->load->view('admin/a_hotel', $data);
+		$this->load->view('templates/admin/footer');
+	}
+
+	public function createhot(){
+		$hot_nama = $this->input->post('hot_nama');
+		$hot_desc_short = $this->input->post('hot_desc_short');
+		$hot_desc_long = $this->input->post('hot_desc_long');
+		$hot_status = $this->input->post('hot_status');
+
+		$hot_img = $_FILES['hot_img']['name'];
+		if ($hot_img = ''){}else{
+				$config['upload_path'] 	= './assets/image';
+				$config['allowed_types']= 'gif|jpg|png|jpeg';
+
+				$this->load->library('upload',$config);
+				if(!$this->upload->do_upload('hot_img')){
+					echo "Upload Gagal"; die();
+				}else{
+						$hot_img=$this->upload->data('file_name');
+					}
+			}
+		
+		$datahot = array(
+			'hot_nama' => $hot_nama,
+			'hot_desc_short' => $hot_desc_short,
+			'hot_desc_long' => $hot_desc_long,
+			'hot_status' => $hot_status,
+			'hot_img' => $hot_img,
+		);
+
+		$this->db->insert('hotel' , $datahot);
+		redirect('C_hotel/view');
+
+	}
+
+	public function edit_hot($hot_id)
+	{
+		$where = array('hot_id' => $hot_id);
+		$data['edthot'] = $this->M_hotata->get_data($where, 'hotel')->result();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		$this->load->view('admin/a_edit_hot', $data);
+		$this->load->view('templates/admin/footer');
+
+	}
+
+	public function update_hot()
+	{
+		$hot_id				= $this->input->post('hot_id');
+		$hot_nama	 		= $this->input->post('hot_nama');
+		$hot_desc_short	 	= $this->input->post('hot_desc_short');
+		$hot_desc_long		= $this->input->post('hot_desc_long');
+		$hot_status			= $this->input->post('hot_status');
+
+		$hot_img				= $_FILES['hot_img']['name'];
+		if ($hot_img = ''){}else{
+				$config['upload_path'] 	= './assets/image';
+				$config['allowed_types']= 'gif|jpg|png';
+				$config['overwrite']	= true;
+
+				$this->load->library('upload',$config);
+				if(!$this->upload->do_upload('hot_img')){
+					$hot_img = $this->input->post('old_image');
+				}else{
+						$hot_img=$this->upload->data('file_name');
+					}
+			}
+
+		$data = array (
+			'hot_nama'			=> $hot_nama,
+			'hot_desc_short' 	=> $hot_desc_short,
+			'hot_desc_long' 	=> $hot_desc_long,
+			'hot_status'		=> $hot_status,
+			'hot_img'			=> $hot_img
+		);
+
+		$where = array (
+			'hot_id' => $hot_id
+		);
+
+		$this->M_admin->update_data($where, $data, 'hotel');
+		redirect('C_hotel/view');
+	}
+
+	public function deletehot($hot_id){
+		$id = array('hot_id' => $hot_id);
+
+		$this->db->where($id);
+		$this->db->delete('hotel');
+		redirect('C_hotel/view');
+	}
 
 }
