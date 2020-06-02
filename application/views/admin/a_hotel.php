@@ -3,7 +3,7 @@
   <h3>Daftar Hotel</h3>
 
   <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#addhot"><i class="fas fa-plus fa-sm"></i> Tambah Hotel Baru</button>
-  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_hotel/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Hotel</a>
+  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_hotel/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Kamar</a>
 
   <?php echo $this->session->flashdata('msg'); ?>
   <table class="table table-bordered table-hover" width="100%">
@@ -17,8 +17,7 @@
         <th scope="col">Status</th>
         <th colspan="3" style="text-align: center;">Action</th>
         
-        
-        
+
       </tr>
     </thead>
 
