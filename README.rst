@@ -3,10 +3,10 @@ What is Wonderful Bawean
 ########################
 Wonderful Bawean is an information system that is able to display tourism objects and provide information if the tourism object is selected, users can see more details of the tourism object to be searched, and can find out the admission tickets on the island of Bawean.
 
-*****************************
-Features (Under construction)
-*****************************
-~Homepage~
+*********
+Features
+*********
+[Homepage]
 1. Daftar Wisata
 2. Hotel dan Penginapan
 3. About
@@ -14,8 +14,9 @@ Features (Under construction)
 5. FAQ
 6. Testimoni
 7. Sign In
+8. Register
 
-~User~
+[User]
 1. Home
 2. Daftar Wisata
 3. Hotel dan Penginapan
@@ -23,7 +24,7 @@ Features (Under construction)
 5. Profile
 6. Logout
 
-~Admin~
+[Admin]
 1. Dashboard
 2. Daftar Wisata
 3. Invoice Penjualan
