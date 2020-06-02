@@ -59,8 +59,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List</h6>
-            <a class="collapse-item" href="../C_admin/wisata">Daftar Wisata</a>
-            <a class="collapse-item" href="../C_hotel/view">Penginapan</a>
+            <a class="collapse-item" href="<?= base_url()?>C_admin/wisata">Daftar Wisata</a>
+            <a class="collapse-item" href="<?= base_url()?>C_hotel/view">Penginapan</a>
           </div>
         </div>
       </li>
@@ -81,19 +81,19 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Pesanan:</h6>
-            <a class="collapse-item" href="../C_inv_wis/index">Invoice pesanan</a>
+            <a class="collapse-item" href="<?= base_url()?>C_inv_wis/index">Invoice pesanan</a>
           </div>
         </div>
       </li>
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <!-- Nav Item - Pages Collapse Menu -->
-
-      <!-- Nav Item - Charts -->
-
-      <!-- Divider -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="" >
+          <i class="fas fa-fw fa-folder"></i>
+          <span>User</span>
+        </a>
+      </li>
+      
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
@@ -117,15 +117,15 @@
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
+            <a href="../C_home">Logout</a>
             <!-- Nav Item - User Information -->
-            <li class="nav-item dropdown no-arrow">
+<!--             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
-              </a>
-              <!-- Dropdown - User Information -->
-            </li>
-
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small" href="../C_home">Logout</span>
+                <!-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+<!--               </a>
+              Dropdown - User Information
+            </li> --> 
           </ul>
 
         </nav>

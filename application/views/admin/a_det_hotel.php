@@ -69,7 +69,7 @@
         </div>
       </div>
         <br>
-          <a href="<?php echo base_url('C_admin/hotata'); ?>" class="btn btn-primary right">Kembali</a>
+          <a href="<?php echo base_url('C_hotel/view'); ?>" class="btn btn-primary right">Kembali</a>
     </div> 
 
 
