@@ -72,7 +72,7 @@ class C_hotel extends CI_Controller {
 	}
 
 
-//=================================================
+//=================================================Admin
 
 	public function view(){
 		$data['hotel'] = $this->M_hotel->tampil_data()->result();
@@ -117,7 +117,7 @@ class C_hotel extends CI_Controller {
 	public function edit_hot($hot_id)
 	{
 		$where = array('hot_id' => $hot_id);
-		$data['edthot'] = $this->M_hotata->get_data($where, 'hotel')->result();
+		$data['edthot'] = $this->M_hotel->get_data($where, 'hotel')->result();
 		$this->load->view('templates/admin/header');
 		$this->load->view('templates/admin/sidebar');
 		$this->load->view('admin/a_edit_hot', $data);
@@ -169,6 +169,14 @@ class C_hotel extends CI_Controller {
 		$this->db->where($id);
 		$this->db->delete('hotel');
 		redirect('C_hotel/view');
+	}
+
+	public function detail_hotel($wis_id){
+		$data['dethot'] = $this->M_hotel->det_hot($wis_id);
+		$data['detroom'] = $this->M_hotel->getFasById($wis_id);
+		$this->load->view('templates/admin/header');
+		$this->load->view('admin/a_det_hotel', $data);
+		$this->load->view('templates/admin/footer');
 	}
 
 }

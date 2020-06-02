@@ -90,9 +90,6 @@
       </div>
     </div>
   </div>
-
-
-  <small id="emailHelp" class="form-text text-muted">Minimal 6 Karakter</small>
   <script>
     
     $('#addwis').on('shown.bs.modal', function () {

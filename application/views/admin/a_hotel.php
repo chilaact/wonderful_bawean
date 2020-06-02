@@ -3,7 +3,7 @@
   <h3>Daftar Hotel</h3>
 
   <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#addhot"><i class="fas fa-plus fa-sm"></i> Tambah Hotel Baru</button>
-  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_admin/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Hotel</a>
+  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_hotel/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Hotel</a>
 
   <?php echo $this->session->flashdata('msg'); ?>
   <table class="table table-bordered table-hover" width="100%">
@@ -35,8 +35,8 @@
         <td><?php echo $hot->hot_desc_long; ?></td>
         <td><?php echo $hot->hot_status; ?></td>
         <td><a class="btn btn-primary" href="<?= base_url('C_hotel/edit_hot/'.$hot->hot_id); ?>"><i class="fa fa-edit"></i></a></td>
-        <td><a class="btn btn-warning" href="<?= base_url('C_hotel/detail_hot/'.$hot->hot_id); ?>"><i class="fa fa-search-plus"></i></a></td>
-        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletehot/'.$hot->hot_id) ?>"><i class="fa fa-trash"></i></a></td>
+        <td><a class="btn btn-warning" href="<?= base_url('C_hotel/detail_hotel/'.$hot->hot_id); ?>"><i class="fa fa-search-plus"></i></a></td>
+        <td><a class="btn btn-danger" href="<?php echo ('deletehot/'.$hot->hot_id) ?>"><i class="fa fa-trash"></i></a></td>
       </tr>
       <?php endforeach ?>
     </tbody>
@@ -49,16 +49,16 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Form Input hotata Baru</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Form Input hotel Baru</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action="<?php echo base_url().'C_admin/createhot'; ?>" method="post" enctype="multipart/form-data">
+          <form action="<?php echo base_url().'C_hotel/createhot'; ?>" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                <label for="nm_hot">Nama hotata</label>
-                <input type="text" class="form-control" id="nm_hot" name="hot_nama" placeholder="Nama hotata" required>
+                <label for="nm_hot">Nama hotel</label>
+                <input type="text" class="form-control" id="nm_hot" name="hot_nama" placeholder="Nama hotel" required>
               </div>
               <div class="form-group">
                 <label for="desc_s">Deskripsi Singkat</label>
@@ -67,11 +67,6 @@
               <div class="form-group">
                 <label for="desc_l">Deskripsi Panjang</label>
                 <textarea class="form-control" id="desc_l" name="hot_desc_long" placeholder="Masukkan Deskripsi" rows="4"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="hrg_b">Harga Tiket Masuk</label>
-                <input type="text" class="form-control" id="hrg_b" name="hot_hrg_weekday" required>
-              </div>
               <div class="form-group">
                 <label for="hrg_b">Status</label>
                 <input type="text" class="form-control" id="status_w" name="hot_status" required>
@@ -90,9 +85,6 @@
       </div>
     </div>
   </div>
-
-
-  <small id="emailHelp" class="form-text text-muted">Minimal 6 Karakter</small>
   <script>
     
     $('#addhot').on('shown.bs.modal', function () {

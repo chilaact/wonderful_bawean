@@ -64,7 +64,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List</h6>
             <a class="collapse-item" href="../C_admin/wisata">Daftar Wisata</a>
-            <a class="collapse-item" href="../C_hotel/hotel">Penginapan</a>
+            <a class="collapse-item" href="../C_hotel/view">Penginapan</a>
           </div>
         </div>
       </li>
