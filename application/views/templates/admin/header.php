@@ -88,7 +88,7 @@
       <!-- Divider -->
       <hr class="sidebar-divider">
       <li class="nav-item">
-        <a class="nav-link collapsed" href="" >
+        <a class="nav-link collapsed" href="<?= base_url()?>C_list/index" >
           <i class="fas fa-fw fa-folder"></i>
           <span>User</span>
         </a>

@@ -17,3 +17,12 @@ class C_list extends CI_Controller {
 		$this->load->view('admin/a_list_user' , $data);
 		$this->load->view('templates/admin/footer');
 	}
+
+	public function deleteus($us_id){
+		$id = array('us_id' => $us_id);
+
+		$this->db->where($id);
+		$this->db->delete('user');
+		redirect('C_list/index');
+	}
+}

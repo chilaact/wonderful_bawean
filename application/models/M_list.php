@@ -6,4 +6,5 @@ class M_list extends CI_Model
 	{
 		return $this->db->get('user');
 	}
+}
 

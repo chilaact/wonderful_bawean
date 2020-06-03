@@ -14,6 +14,7 @@
         <th scope="col">User Email</th>
         <th scope="col">No HP</th>
         <th scope="col">Status</th>
+        <th scope="col">Role</th>
         <th colspan="3" style="text-align: center;">Action</th>
         
       </tr>
@@ -22,7 +23,14 @@
     <tbody>
       <?php 
       $no = 1;
+
       foreach ($user as $us ):
+      if ($us->us_role == '1'){
+        $status = 'User';
+      }
+      else {
+        $status = 'Admin';
+      }
    ?>
       <tr>
 
@@ -32,10 +40,9 @@
         <td><?php echo $us->us_email; ?></td>
         <td><?php echo $us->us_nohp; ?></td>
         <td><?php echo $us->us_status; ?></td>
+        <td><?php echo $status; ?></td>
 
-        <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_us/'.$us->us_id); ?>"><i class="fa fa-edit"></i></a></td>
-        <td><a class="btn btn-warning" href="<?= base_url('C_admin/detail_us/'.$us->us_id); ?>"><i class="fa fa-search-plus"></i></a></td>
-        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deleteus/'.$us->us_id) ?>"><i class="fa fa-trash"></i></a></td>
+        <td><a class="btn btn-danger" href="<?php echo ('deleteus/'.$us->us_id) ?>"><i class="fa fa-trash"></i></a></td>
       </tr>
       <?php endforeach ?>
     </tbody>
