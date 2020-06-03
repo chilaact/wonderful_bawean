@@ -11,7 +11,7 @@
 <!------ Include the above in your HEAD tag ---------->
 </head>
 <body>
-	<a href="<?php echo base_url('C_home/index'); ?>" class="btn btn-primary right">Kembali ke Beranda</a>
+	<a href="<?php echo base_url('C_home/index'); ?>" class="btn btn-primary right" style="margin-top: 2px; margin-left: 2px">Kembali ke Beranda</a>
 		<div class="wrapper fadeInDown">
 			<div id="formContent">
 				<!-- Tabs Titles -->

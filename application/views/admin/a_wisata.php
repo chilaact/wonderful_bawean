@@ -36,7 +36,7 @@
         <td><?php echo $wis->wis_status; ?></td>
         <td><a class="btn btn-primary" href="<?= base_url('C_admin/edit_wis/'.$wis->wis_id); ?>"><i class="fa fa-edit"></i></a></td>
         <td><a class="btn btn-warning" href="<?= base_url('C_admin/detail_wis/'.$wis->wis_id); ?>"><i class="fa fa-search-plus"></i></a></td>
-        <td><a class="btn btn-danger" href="<?php echo ('C_admin/deletewis/'.$wis->wis_id) ?>"><i class="fa fa-trash"></i></a></td>
+        <td><a class="btn btn-danger" href="<?php echo base_url('C_admin/deletewis/'.$wis->wis_id) ?>"><i class="fa fa-trash"></i></a></td>
       </tr>
       <?php endforeach ?>
     </tbody>
