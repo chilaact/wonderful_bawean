@@ -10,7 +10,7 @@
           <div style="width: 100%">             
             <table class="table">
               <tr>
-                <td style="width: 20em">Nama hotata</td>
+                <td style="width: 20em">Nama hotel</td>
                 <td style="width: 3em; text-align: center;">:</td>
                 <td><strong><?php echo $detail->hot_nama?></strong></td>
               </tr>
@@ -48,6 +48,7 @@
                 <tr class="thead-light">
                   <th scope="col">#</th>
                   <th scope="col">Nama Room</th>
+                  <th scope="col">Harga</th>
                   <th colspan="2" style="text-align: center;">Aksi</th>
                 </tr>
               </thead>
@@ -56,9 +57,10 @@
                   <tr>
                     <th scope="row"><?php echo $no; $no++; ?></th>
                     <td><?php echo $det->room_nama ?></td>
+                    <td>Rp. <?php echo number_format($det->room_hrg, 0,',','.') ?> ,-</td>
                     <td style="text-align: center;">
-                      <a href="<?php echo base_url() ?>C_admin/edit_room/<?php echo $det->room_id; ?>" class="btn btn-outline-warning">Edit</a>
-                      <a href=" <?php echo base_url() ?>C_admin/deleteroom/<?php echo $det->room_id; ?>" class="btn btn-outline-danger">Delete</a>
+                      <a href="<?php echo base_url() ?>C_hotel/edit_room/<?php echo $det->room_id; ?>" class="btn btn-outline-warning">Edit</a>
+                      <a href=" <?php echo base_url() ?>C_hotel/del_kmr/<?php echo $det->room_id; ?>" class="btn btn-outline-danger">Delete</a>
                                
                     </td>
                   </tr>

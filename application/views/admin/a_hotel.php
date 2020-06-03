@@ -3,7 +3,7 @@
   <h3>Daftar Hotel</h3>
 
   <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#addhot"><i class="fas fa-plus fa-sm"></i> Tambah Hotel Baru</button>
-  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_hotel/create'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Kamar</a>
+  <a class="btn btn-sm btn-success mb-3" href="<?php echo base_url().'C_hotel/createkmr'; ?>" style="width: 8em"><i class="fas fa-plus fa-sm"></i> Kamar</a>
 
   <?php echo $this->session->flashdata('msg'); ?>
   <table class="table table-bordered table-hover" width="100%">
@@ -13,7 +13,6 @@
         <th scope="col">No</th>
         <th scope="col">Nama Hotel</th>
         <th scope="col">Alamat</th>
-        <th scope="col">Hrg Normal</th>
         <th scope="col">Status</th>
         <th colspan="3" style="text-align: center;">Action</th>
         
@@ -31,7 +30,6 @@
         <th scope="row"><?php echo $no; $no++; ?></th>
         <td><?php echo $hot->hot_nama; ?></td>
         <td><?php echo $hot->hot_desc_short; ?></td>
-        <td><?php echo $hot->hot_desc_long; ?></td>
         <td><?php echo $hot->hot_status; ?></td>
         <td><a class="btn btn-primary" href="<?= base_url('C_hotel/edit_hot/'.$hot->hot_id); ?>"><i class="fa fa-edit"></i></a></td>
         <td><a class="btn btn-warning" href="<?= base_url('C_hotel/detail_hotel/'.$hot->hot_id); ?>"><i class="fa fa-search-plus"></i></a></td>

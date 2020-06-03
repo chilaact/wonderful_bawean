@@ -68,4 +68,22 @@ class M_hotel extends CI_Model
 		$this->db->where($where);
 		$this->db->update($table, $data);
 	}
+
+	public function insert_data($data)
+	{
+		$this->db->insert('type_room',$data);
+
+		return $this->db->affected_rows();
+	}
+
+	public function get_list()
+	{
+		return $this->db->get('hotel')->result();
+	}
+
+	public function hapus_data($where, $table)
+	{
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
 }

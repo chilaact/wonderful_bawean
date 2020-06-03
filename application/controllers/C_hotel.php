@@ -159,7 +159,7 @@ class C_hotel extends CI_Controller {
 			'hot_id' => $hot_id
 		);
 
-		$this->M_admin->update_data($where, $data, 'hotel');
+		$this->M_hotel->update_data($where, $data, 'hotel');
 		redirect('C_hotel/view');
 	}
 
@@ -177,6 +177,79 @@ class C_hotel extends CI_Controller {
 		$this->load->view('templates/admin/header');
 		$this->load->view('admin/a_det_hotel', $data);
 		$this->load->view('templates/admin/footer');
+	}
+
+	public function createkmr(){
+		
+		//cek jika ada inputan dari user
+		if ($this->input->post()) {
+			//lakukan insert data
+			$input_kmr = $this->input->post();
+			//print_r($input_user);
+			//exit();
+			$status = $this->M_hotel->insert_data($input_kmr);
+			//echo "success"; exit;
+			//pesan gagal/sukses
+			if ($status > 0) {
+				//kirim pesan sukses
+				$this->session->set_flashdata('msg',template_success_msg("Kamar berhasil di tambahkan"));
+			}
+			else{
+				//pesan error
+				$this->session->set_flashdata('msg',template_error_msg("Kamar Gagal di tambahkan"));
+			}
+
+			redirect(base_url().'C_hotel/view');
+		}
+		else{
+			//tampilkan form
+			$data['list'] = $this->M_hotel->get_list();
+			$this->load->view('templates/admin/header');
+			$this->load->view("admin/a_add_kmr",$data);
+			$this->load->view('templates/admin/footer');
+			
+
+		}
+	
+	}
+
+	public function edit_room($room_id)
+	{
+		$where = array('room_id' => $room_id);
+		$data['edtroom'] = $this->M_hotel->get_data($where, 'type_room')->result();
+		$this->load->view('templates/admin/header');
+		$this->load->view('templates/admin/sidebar');
+		$this->load->view('admin/a_edit_kmr', $data);
+		$this->load->view('templates/admin/footer');
+
+	}
+
+	public function update_kmr()
+	{
+		$hot_id				= $this->input->post('hot_id');
+		$room_id			= $this->input->post('room_id');
+		$room_nama	 		= $this->input->post('room_nama');
+		$room_hrg	 		= $this->input->post('room_hrg');
+
+		$data = array (
+			'hot_id' 			=> $hot_id,
+			'room_nama'			=> $room_nama,
+			'room_hrg'			=> $room_hrg,
+		);
+
+		$where = array (
+			'room_id' => $room_id
+		);
+
+		$this->M_hotel->update_data($where, $data, 'type_room');
+		redirect(base_url().'C_hotel/detail_hotel/'.$hot_id);
+	}
+
+	public function del_kmr($room_id){
+		$where = array ('room_id' => $room_id);
+		$this->M_hotel->hapus_data($where, 'type_room');	
+
+		redirect(base_url().'C_hotel/view');
 	}
 
 }
