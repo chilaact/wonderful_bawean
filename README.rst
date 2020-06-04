@@ -34,14 +34,16 @@ Features
 ***********
 How to Use
 ***********
-	You can run this project to your localhost
+   You can run this project to your localhost
 1. Run your XAMPP, because this information system will be run at your localhost
 2. Clone or download this repo
 3. Extract file to C:/xampp/htdocs
 4. Import the database boyan.sql to http://localhost/phpmyadmin
 5. Open browser and run this app by typing http://localhost/wonderful_bawean/
-	OR
-	You can directly access this project with this link http://wonderful-bawean.pmh.web.id/ *it's online! :D
+
+   OR
+   
+   You can directly access this project with this link http://wonderful-bawean.pmh.web.id/ *it's online! :D
 
 ***************
 Collaborators
