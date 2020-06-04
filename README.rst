@@ -39,9 +39,9 @@ How to Use
 4. Import the database boyan.sql to http://localhost/phpmyadmin
 5. Open browser and run this app by typing http://localhost/wonderful_bawean/
 
-OR
+   OR
 
-You can access this project with this link http://wonderful-bawean.pmh.web.id/ 
+   You can access this project with this link http://wonderful-bawean.pmh.web.id/ 
 
 ***************
 Collaborators
