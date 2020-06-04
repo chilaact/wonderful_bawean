@@ -6,7 +6,7 @@ Wonderful Bawean is an information system that is able to display tourism object
 *********
 Features
 *********
-[Homepage]
+*Homepage*
 1. Daftar Wisata
 2. Hotel dan Penginapan
 3. About
