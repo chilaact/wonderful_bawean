@@ -6,7 +6,7 @@ Wonderful Bawean is an information system that is able to display tourism object
 *********
 Features
 *********
-*Homepage*
+[Homepage]
 1. Daftar Wisata
 2. Hotel dan Penginapan
 3. About
@@ -37,7 +37,11 @@ How to Use
 2. Clone or download this repo
 3. Extract file to C:/xampp/htdocs
 4. Import the database boyan.sql to http://localhost/phpmyadmin
-5. Open browser and run this app by typing localhost/. . . . .will be up soon
+5. Open browser and run this app by typing http://localhost/wonderful_bawean/
+
+OR
+
+You can access this project with this link http://wonderful-bawean.pmh.web.id/ 
 
 ***************
 Collaborators
